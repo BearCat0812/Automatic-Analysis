@@ -1,0 +1,44 @@
+<Process id="22e71421-e30c-4075-a181-fa5c4a347a16" type="process" workType="foreground" name="P_Automatic_Analysis" version="" designerVersion="3.1.125.00701" lastPublishedServer="" readonly="false" isValid="true" DesignedBy="Designer" Template="" StepCount="0" Orientation="horizontal">
+  <Properties>
+    <Property key="Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="default process" enabled="True" />
+    <Property key="onBefore" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onAfter" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="0" />
+    <Property key="RunningTime" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="0" />
+    <Property key="Os" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="Microsoft Windows 11 Home64비트" />
+    <Property key="Resolution" controlType="String" valueType="System.String" formatType="String_Size" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="2560x1600" />
+    <Property key="CreatedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="2025-08-18 11:27:25" />
+    <Property key="CreatedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+    <Property key="LastModifiedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="2025-08-18 11:27:25" />
+    <Property key="LastModifiedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+  </Properties>
+  <LinkItems />
+  <Variables />
+  <Steps />
+  <JScript><![CDATA[function P_Automatic_Analysis() {
+
+    this.RPAGOTOENABLE = false;
+    this.GotoStepRetryCntMap = {};
+    this.GotoBlockMap = {};
+    this.GotoReverseBlockMap = {};
+    this.GotoStepBlockTypeMap = {};
+
+
+    this.run = function() {
+    }
+
+    this.execute = function() {
+        var result = null;
+        result = this.run()
+        if (result != null)
+            return result;
+    }
+}
+]]></JScript>
+  <Diagram version="1.300" nodesize="Normal">
+    <StepNodes />
+  </Diagram>
+</Process>

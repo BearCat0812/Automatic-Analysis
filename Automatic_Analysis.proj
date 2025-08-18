@@ -1,0 +1,38 @@
+<Project id="e995dbfc-7431-41fb-90a5-5b36f763fb4c" namespace="" name="Automatic_Analysis" category="project" workType="foreground" version="1.00" lastPublishedDate="" lastPublishedBy="" createdDate="2025-08-18 11:27:24" createdBy="" latestProcess="T_Python_데이터_분석" designerVersion="3.1.125.00701" DesignedBy="">
+  <SharedTask isExpended="false" />
+  <NormalTask isExpended="true">
+    <LinkItem id="2e3cd3a8-8656-4beb-bbf5-d0f7199785e8" category="NormalTask" isChanged="Y" desc="" stepCount="0" name="T_Python_데이터_분석">
+      <Properties />
+    </LinkItem>
+  </NormalTask>
+  <Event isExpended="false" />
+  <Process isExpended="false">
+    <LinkItem id="22e71421-e30c-4075-a181-fa5c4a347a16" category="Process" isChanged="Y" desc="default process" stepCount="0" name="P_Automatic_Analysis">
+      <Properties />
+    </LinkItem>
+  </Process>
+  <CustomLibraries isExpended="false" />
+  <LibraryTemplate isExpended="false" />
+  <Resources isExpended="false" />
+  <RemoteProcess isExpended="false" />
+  <RecorderData isExpended="false" />
+  <Asset />
+  <Library />
+  <Variables />
+  <Properties>
+    <Property key="PlayOption_StepInterval" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="1" />
+    <Property key="PlayOption_DisableDrawBounds" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="False" />
+    <Property key="PlayOption_InvokeFirst" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="False" />
+    <Property key="PlayOption_AllowUploadDumpScreenResult" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="False" />
+  </Properties>
+  <DisplayLibraries>
+    <string>Flow</string>
+    <string>Win</string>
+    <string>Net</string>
+    <string>Excel</string>
+    <string>Desktop</string>
+    <string>Chrome</string>
+    <string>ImageRecognition</string>
+    <string>DataConverter</string>
+  </DisplayLibraries>
+</Project>
