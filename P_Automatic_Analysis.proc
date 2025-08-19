@@ -1,23 +1,60 @@
-<Process id="22e71421-e30c-4075-a181-fa5c4a347a16" type="process" workType="foreground" name="P_Automatic_Analysis" version="" designerVersion="3.1.125.00701" lastPublishedServer="" readonly="false" isValid="true" DesignedBy="Designer" Template="" StepCount="0" Orientation="horizontal">
+<Process id="c694acd7-5769-409c-88a3-558ad68664ff" type="process" workType="foreground" name="P_Automatic_Analysis" version="1.0" designerVersion="3.1.125.00701" readonly="false" isValid="true" DesignedBy="Designer" Template="" StepCount="4" Orientation="horizontal">
   <Properties>
     <Property key="Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="default process" enabled="True" />
     <Property key="onBefore" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
     <Property key="onAfter" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
     <Property key="onError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
     <Property key="Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="0" />
-    <Property key="RunningTime" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="0" />
-    <Property key="Os" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="Microsoft Windows 11 Home64비트" />
-    <Property key="Resolution" controlType="String" valueType="System.String" formatType="String_Size" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="2560x1600" />
-    <Property key="CreatedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="2025-08-18 11:27:25" />
+    <Property key="RunningTime" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="127" />
+    <Property key="Os" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="Microsoft Windows 10 Pro64비트" />
+    <Property key="Resolution" controlType="String" valueType="System.String" formatType="String_Size" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="1920x1080" />
+    <Property key="CreatedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2025-08-18 15:29:08" />
     <Property key="CreatedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
-    <Property key="LastModifiedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="2025-08-18 11:27:25" />
-    <Property key="LastModifiedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+    <Property key="LastModifiedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2025-08-19 16:56:09" />
+    <Property key="LastModifiedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="" />
     <Property key="LastPublishedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
     <Property key="LastPublishedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
   </Properties>
   <LinkItems />
   <Variables />
-  <Steps />
+  <Steps>
+    <Step id="S9eee63e54b944340a136fee0551fa16b" ver="311241220" createVer="311241220" type="Flow" name="RunTask" dpName="RunTask" dpValue="" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="1e1941cf-8de3-40a6-a99b-79ffc043b351" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_TaskName" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="T_1_데이터_수집" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RunTask(this, 'T_1_데이터_수집', null);]]></Script>
+    </Step>
+    <Step id="Sc26cb9e689a446ceaddb9ccc0a790485" ver="311241220" createVer="311241220" type="Flow" name="RunTask" dpName="RunTask" dpValue="" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="9f53e876-59ac-40f4-8af3-0a79bb382411" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_TaskName" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="T_2_데이터_가공" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RunTask(this, 'T_2_데이터_가공', null);]]></Script>
+    </Step>
+    <Step id="S39ee30f700f7435db2a63845f7c321ed" ver="311241220" createVer="311241220" type="Flow" name="RunTask" dpName="RunTask" dpValue="" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="8215028e-8955-4b87-ada6-ac4de7593318" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_TaskName" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="T_3_시각화" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RunTask(this, 'T_3_시각화', null);]]></Script>
+    </Step>
+    <Step id="S9f74c32b521c4b07ad66765b40457bab" ver="311241220" createVer="311241220" type="Flow" name="RunTask" dpName="RunTask" dpValue="" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="577c7e31-4db5-4a05-aff0-5a29c49f2258" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_TaskName" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="T_4_메일링" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RunTask(this, 'T_4_메일링', null);]]></Script>
+    </Step>
+  </Steps>
   <JScript><![CDATA[function P_Automatic_Analysis() {
 
     this.RPAGOTOENABLE = false;
@@ -28,6 +65,24 @@
 
 
     this.run = function() {
+
+        //------------------------------------------------
+        STEP('S9eee63e54b944340a136fee0551fa16b', '[1] RunTask');
+        RunTask(this, 'T_1_데이터_수집', null);
+
+        //------------------------------------------------
+        STEP('Sc26cb9e689a446ceaddb9ccc0a790485', '[2] RunTask');
+        RunTask(this, 'T_2_데이터_가공', null);
+
+        //------------------------------------------------
+        STEP('S39ee30f700f7435db2a63845f7c321ed', '[3] RunTask');
+        RunTask(this, 'T_3_시각화', null);
+
+        //------------------------------------------------
+        STEP('S9f74c32b521c4b07ad66765b40457bab', '[4] RunTask');
+        RunTask(this, 'T_4_메일링', null);
+
+
     }
 
     this.execute = function() {
@@ -39,6 +94,11 @@
 }
 ]]></JScript>
   <Diagram version="1.300" nodesize="Normal">
-    <StepNodes />
+    <StepNodes>
+      <StepNode step_id="S9eee63e54b944340a136fee0551fa16b" group_name="" folded="False" color="" />
+      <StepNode step_id="Sc26cb9e689a446ceaddb9ccc0a790485" group_name="" folded="False" color="" />
+      <StepNode step_id="S39ee30f700f7435db2a63845f7c321ed" group_name="" folded="False" color="" />
+      <StepNode step_id="S9f74c32b521c4b07ad66765b40457bab" group_name="" folded="False" color="" />
+    </StepNodes>
   </Diagram>
 </Process>

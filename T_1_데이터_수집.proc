@@ -1,0 +1,198 @@
+<Process id="d11941ae-c77a-4467-9f83-e8d51805a4be" type="task" workType="foreground" name="T_1_데이터_수집" version="1.0" designerVersion="3.1.125.00701" readonly="false" isValid="true" DesignedBy="Designer" Template="" StepCount="9" Orientation="horizontal">
+  <Properties>
+    <Property key="Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onBefore" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onAfter" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="onError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
+    <Property key="Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="0" />
+    <Property key="RunningTime" controlType="Int32" valueType="System.Int32" formatType="Integer" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="14" />
+    <Property key="Os" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="Microsoft Windows 10 Pro64비트" />
+    <Property key="Resolution" controlType="String" valueType="System.String" formatType="String_Size" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="1920x1080" />
+    <Property key="CreatedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2025-08-19 09:35:31" />
+    <Property key="CreatedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+    <Property key="LastModifiedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2025-08-19 16:55:35" />
+    <Property key="LastModifiedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+  </Properties>
+  <LinkItems />
+  <Variables>
+    <Variable name="file" scope="Normal" valueType="Any" formatType="Any" initValue="" desc="" colorValue="#FF539165" showMarker="False" />
+  </Variables>
+  <Steps>
+    <Step id="S2b8c2150f27b41f1b2c3ae75357eceae" ver="311241220" createVer="311241220" type="Desktop" name="InputBox" dpName="InputBox" dpValue="RESULT" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="False" mainSet="0">
+      <Properties id="6b97092a-58bd-437f-b461-e02d2eeaa92c" type="Desktop">
+        <Property type="Desktop" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Conditions_Variable" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="RESULT" />
+        <Property type="Desktop" key="Conditions_PromptType" controlType="PropertyItemDropDownView" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="Text" valuelist="OK;OK/Cancel;Yes/No;Yes/No/Cancel;Abort/Retry/Ignore;Retry/Cancel;Text" />
+        <Property type="Desktop" key="Conditions_DefaultValue" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="''" />
+        <Property type="Desktop" key="Conditions_DefaultItem" controlType="String" valueType="System.String" formatType="String" required="False" visible="False" readonly="False" encrypted="False" isChanged="N" value="''" />
+        <Property type="Desktop" key="Conditions_PromptMessage" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="''" />
+        <Property type="Desktop" key="Conditions_TimeoutSec" controlType="Int32" valueType="System.Int32" formatType="Integer" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="600" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[]]></Script>
+    </Step>
+    <Step id="S9a22cf0485d445ffb21eb037754381ad" ver="311241220" createVer="311241220" type="Desktop" name="IsFileExist" dpName="IsFileExist" dpValue="this.file" dpValue2="" dpImage="" tag="" depth="1" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="74f14bca-f810-4b7b-95a3-53719b7b604d" type="Desktop">
+        <Property type="Desktop" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Command_Path" controlType="File" valueType="System.String" formatType="String_FilePath" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="'C:\\Users\\GVTI1C18\\Desktop\\Automatic-Analysis\\삼성전자_2020-2024_재무분석_requests.xlsx'" />
+        <Property type="Desktop" key="Command_Output" controlType="OutputControlType" valueType="System.Boolean" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.file" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[this.file = StepPlayer.Run('Desktop.IsFileExist', this.isfileexist_info_2);]]></Script>
+    </Step>
+    <Step id="Sc7238b4dfc9d4b46a9f4ed9d3a6a541f" ver="311241220" createVer="311241220" type="Flow" name="Decision" dpName="IfElse" dpValue="this.file==true" dpValue2="" dpImage="" tag="" depth="1" stmttype="OpenBlock" enabled="True" mainSet="0">
+      <Properties id="5b0867a2-a140-4345-8d2d-c4db08107a43" type="Flow">
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_Expression" controlType="PropertyItemTextEditorView" valueType="System.Object" formatType="Condition" required="True" visible="False" readonly="True" encrypted="False" isChanged="N" value="this.file==true" order="1" />
+        <Property type="Flow" key="Conditions_CombineCondition" controlType="PropertyItemCombineConditionView" valueType="System.Boolean" formatType="Boolean" required="False" visible="False" readonly="False" encrypted="False" isChanged="N" value="True" order="2" />
+        <Property type="Flow" key="Conditions_Expression1" controlType="PropertyItemExpressionView" valueType="System.Object" formatType="Condition" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.file==true" order="3" />
+        <Property type="Flow" key="Conditions_AddCondition" controlType="PropertyItemAddConditionView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+      </Properties>
+      <RelatedSteps>
+        <RelatedStep id="Sc154f03f3d554c7ea5a770463c3f6fa3" type="Flow" name="Else" />
+        <RelatedStep id="Sadd26bbe7fbd4bc3a5894489171d8fc0" type="Flow" name="EndDecision" />
+      </RelatedSteps>
+      <Script><![CDATA[if (this.file==true) {]]></Script>
+    </Step>
+    <Step id="Sc154f03f3d554c7ea5a770463c3f6fa3" ver="311241220" createVer="311241220" type="Flow" name="Else" dpName="Else" dpValue="" dpValue2="" dpImage="" tag="" depth="2" stmttype="CloseOpenBlock" enabled="True" mainSet="0">
+      <Properties id="a65657cb-c189-4aba-beca-b6235aec498a" type="Flow">
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+      </Properties>
+      <RelatedSteps>
+        <RelatedStep id="Sc7238b4dfc9d4b46a9f4ed9d3a6a541f" type="Flow" name="Decision" />
+      </RelatedSteps>
+      <Script><![CDATA[}else{]]></Script>
+    </Step>
+    <Step id="S9b2ad93387d044c69d07cd56977aa0a2" ver="311241220" createVer="311241220" type="Desktop" name="ExecuteFile" dpName="ExecuteFile" dpValue="RESULT" dpValue2="" dpImage="" tag="" depth="2" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="983afdca-2856-4234-959f-f574730c5934" type="Desktop">
+        <Property type="Desktop" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Command_Path" controlType="File" valueType="System.String" formatType="String_FilePath" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="'C:\\Users\\GVTI1C18\\Desktop\\Automatic-Analysis\\analysis.py'" />
+        <Property type="Desktop" key="Command_Output" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="RESULT" />
+        <Property type="Desktop" key="Command_Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="10" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RESULT = StepPlayer.Run('Desktop.ExecuteFile', this.executefile_info_5);]]></Script>
+    </Step>
+    <Step id="Scf40351ad93044dc971b5b7711091161" ver="311241220" createVer="311241220" type="Flow" name="Delay" dpName="Delay" dpValue="5 sec" dpValue2="" dpImage="" tag="" depth="2" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="29a4c563-7203-4c3e-9777-f764f183f240" type="Flow">
+        <Property type="Flow" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Flow" key="Conditions_Second" controlType="Int32" valueType="System.Int32" formatType="Integer" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="5" />
+        <Property type="Flow" key="Conditions_Millisecond" controlType="Int32" valueType="System.Int32" formatType="Integer" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="0" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[Delay(5000);]]></Script>
+    </Step>
+    <Step id="S4a4d8439d69c418288e7c7ff07217738" ver="311241220" createVer="311241220" type="Desktop" name="ExecuteCmd" dpName="ExecuteCmd" dpValue="RESULT" dpValue2="" dpImage="" tag="" depth="2" stmttype="Normal" enabled="False" mainSet="0">
+      <Properties id="ab8462fb-e9b7-4697-a65e-bce63c123c3f" type="Desktop">
+        <Property type="Desktop" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Command_Command" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="'python &quot;C:\Users\GVTI1C18\Desktop\Automatic-Analysis\analysis.py&quot;'" />
+        <Property type="Desktop" key="Command_Arguments" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="''" />
+        <Property type="Desktop" key="Command_Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="30000" />
+        <Property type="Desktop" key="Command_Output" controlType="OutputControlType" valueType="System.Object" formatType="Variable" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="RESULT" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RESULT = SystemLib.ExecuteCmd('python "C:\Users\GVTI1C18\Desktop\Automatic-Analysis\analysis.py"', '', false, 30000, true);]]></Script>
+    </Step>
+    <Step id="S2c395b2bec8047c989909b4cff95476b" ver="311241220" createVer="311241220" type="Desktop" name="WaitFileCreation" dpName="WaitFileCreation" dpValue="RESULT" dpValue2="" dpImage="" tag="" depth="2" stmttype="Normal" enabled="True" mainSet="0">
+      <Properties id="a4e4a227-91db-4a29-b6cb-ce15ac8870cd" type="Desktop">
+        <Property type="Desktop" key="Options_OnError" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+        <Property type="Desktop" key="Command_Path" controlType="File" valueType="System.String" formatType="String_FilePath" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="'C:\\Users\\GVTI1C18\\Desktop\\Automatic-Analysis\\삼성전자_2020-2024_재무분석_requests.xlsx'" />
+        <Property type="Desktop" key="Command_Timeout" controlType="Int32" valueType="System.Int32" formatType="Integer" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="10" />
+        <Property type="Desktop" key="Command_FileSize" controlType="Double" valueType="System.Double" formatType="Double" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="5" />
+        <Property type="Desktop" key="Command_Output" controlType="OutputControlType" valueType="System.Boolean" formatType="Variable" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="RESULT" />
+      </Properties>
+      <RelatedSteps />
+      <Script><![CDATA[RESULT = StepPlayer.Run('Desktop.WaitFileCreation', this.waitfilecreation_info_8);]]></Script>
+    </Step>
+    <Step id="Sadd26bbe7fbd4bc3a5894489171d8fc0" ver="311241220" createVer="311241220" type="Flow" name="EndDecision" dpName="End-IfElse" dpValue="" dpValue2="" dpImage="" tag="" depth="2" stmttype="CloseBlock" enabled="True" mainSet="0">
+      <Properties id="d2392726-6cfc-4d4a-8e31-d11f87ed33c4" type="Flow">
+        <Property type="Flow" key="Key_Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+      </Properties>
+      <RelatedSteps>
+        <RelatedStep id="Sc7238b4dfc9d4b46a9f4ed9d3a6a541f" type="Flow" name="Decision" />
+      </RelatedSteps>
+      <Script><![CDATA[}]]></Script>
+    </Step>
+  </Steps>
+  <JScript><![CDATA[function T_1_데이터_수집() {
+
+    this.file;
+
+    this.RPAGOTOENABLE = false;
+    this.GotoStepRetryCntMap = {};
+    this.GotoBlockMap = {3:[4,9]};
+    this.GotoReverseBlockMap = {4:3,9:3};
+    this.GotoStepBlockTypeMap = {3:'Decision',4:'Else',9:'EndDecision'};
+
+
+    this.run = function() {
+
+        ////------------------------------------------------
+        //STEP('S2b8c2150f27b41f1b2c3ae75357eceae', '[1] InputBox');
+
+
+        //------------------------------------------------
+        STEP('S9a22cf0485d445ffb21eb037754381ad', '[2] IsFileExist');
+        this.file = StepPlayer.Run('Desktop.IsFileExist', this.isfileexist_info_2);
+
+        //------------------------------------------------
+        STEP('Sc7238b4dfc9d4b46a9f4ed9d3a6a541f', '[3] IfElse');
+        if (this.file==true) {
+
+        //------------------------------------------------
+        }else{
+            STEP('Sc154f03f3d554c7ea5a770463c3f6fa3', '[4] Else');
+
+            //------------------------------------------------
+            STEP('S9b2ad93387d044c69d07cd56977aa0a2', '[5] ExecuteFile');
+            RESULT = StepPlayer.Run('Desktop.ExecuteFile', this.executefile_info_5);
+
+            //------------------------------------------------
+            STEP('Scf40351ad93044dc971b5b7711091161', '[6] Delay');
+            Delay(5000);
+
+            ////------------------------------------------------
+            //STEP('S4a4d8439d69c418288e7c7ff07217738', '[7] ExecuteCmd');
+            //RESULT = SystemLib.ExecuteCmd('python "C:\Users\GVTI1C18\Desktop\Automatic-Analysis\analysis.py"', '', false, 30000, true);
+
+            //------------------------------------------------
+            STEP('S2c395b2bec8047c989909b4cff95476b', '[8] WaitFileCreation');
+            RESULT = StepPlayer.Run('Desktop.WaitFileCreation', this.waitfilecreation_info_8);
+
+        //------------------------------------------------
+        }
+        STEP('Sadd26bbe7fbd4bc3a5894489171d8fc0', '[9] End-IfElse');
+
+
+    }
+
+    this.execute = function() {
+        var result = null;
+        result = this.run()
+        if (result != null)
+            return result;
+    }
+}
+]]></JScript>
+  <Diagram version="1.300" nodesize="Normal">
+    <StepNodes>
+      <StepNode step_id="S2b8c2150f27b41f1b2c3ae75357eceae" group_name="5ca41573-04a6-437b-a466-a52260973477_Untitled" folded="False" color="" />
+      <StepNode step_id="S9a22cf0485d445ffb21eb037754381ad" group_name="79365bbf-8b70-4a30-9423-8886e6033af3_Untitled" folded="False" color="" />
+      <StepNode step_id="Sc7238b4dfc9d4b46a9f4ed9d3a6a541f" group_name="" folded="False" color="" />
+      <StepNode step_id="Sc154f03f3d554c7ea5a770463c3f6fa3" group_name="" folded="False" color="" />
+      <StepNode step_id="S9b2ad93387d044c69d07cd56977aa0a2" group_name="bab7e1fa-02de-467f-9cbb-c5141c6de34e_Untitled" folded="False" color="" />
+      <StepNode step_id="Scf40351ad93044dc971b5b7711091161" group_name="bab7e1fa-02de-467f-9cbb-c5141c6de34e_Untitled" folded="False" color="" />
+      <StepNode step_id="S4a4d8439d69c418288e7c7ff07217738" group_name="366e4d18-f701-40fe-b616-2144564a6d79_Untitled" folded="False" color="" />
+      <StepNode step_id="S2c395b2bec8047c989909b4cff95476b" group_name="af2d4324-5361-455d-b6fb-4f4ed5ded0c9_Untitled" folded="False" color="" />
+      <StepNode step_id="Sadd26bbe7fbd4bc3a5894489171d8fc0" group_name="" folded="False" color="" />
+    </StepNodes>
+  </Diagram>
+</Process>

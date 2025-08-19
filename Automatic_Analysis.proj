@@ -1,13 +1,22 @@
-<Project id="e995dbfc-7431-41fb-90a5-5b36f763fb4c" namespace="" name="Automatic_Analysis" category="project" workType="foreground" version="1.00" lastPublishedDate="" lastPublishedBy="" createdDate="2025-08-18 11:27:24" createdBy="" latestProcess="T_Python_데이터_분석" designerVersion="3.1.125.00701" DesignedBy="">
+<Project id="37addf2e-ad06-425b-95d2-c638e41e8d1a" namespace="" name="Automatic_Analysis" category="project" workType="foreground" version="1.00" lastPublishedDate="" lastPublishedBy="" createdDate="2025-08-18 15:29:08" createdBy="" lastPublishedServer="" latestProcess="P_Automatic_Analysis" designerVersion="3.1.125.00701" DesignedBy="">
   <SharedTask isExpended="false" />
   <NormalTask isExpended="true">
-    <LinkItem id="2e3cd3a8-8656-4beb-bbf5-d0f7199785e8" category="NormalTask" isChanged="Y" desc="" stepCount="0" name="T_Python_데이터_분석">
+    <LinkItem id="d11941ae-c77a-4467-9f83-e8d51805a4be" category="NormalTask" isChanged="Y" desc="" stepCount="9" name="T_1_데이터_수집">
+      <Properties />
+    </LinkItem>
+    <LinkItem id="e300e850-dc13-4a42-862b-a4a6bd614e16" category="NormalTask" isChanged="Y" desc="" stepCount="16" name="T_2_데이터_가공">
+      <Properties />
+    </LinkItem>
+    <LinkItem id="2813bdbd-688d-4680-a078-271067bafd68" category="NormalTask" isChanged="Y" desc="" stepCount="17" name="T_3_시각화">
+      <Properties />
+    </LinkItem>
+    <LinkItem id="a3170eba-3e5b-431a-af62-776aa16eb567" category="NormalTask" isChanged="Y" desc="" stepCount="4" name="T_4_메일링">
       <Properties />
     </LinkItem>
   </NormalTask>
   <Event isExpended="false" />
-  <Process isExpended="false">
-    <LinkItem id="22e71421-e30c-4075-a181-fa5c4a347a16" category="Process" isChanged="Y" desc="default process" stepCount="0" name="P_Automatic_Analysis">
+  <Process isExpended="true">
+    <LinkItem id="c694acd7-5769-409c-88a3-558ad68664ff" category="Process" isChanged="Y" desc="default process" stepCount="4" name="P_Automatic_Analysis">
       <Properties />
     </LinkItem>
   </Process>
