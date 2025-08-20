@@ -94,14 +94,14 @@ try:
         # --- 미래 예측 기능 추가 ---
         print("\n--- 미래 재무 데이터 예측 시작 ---")
         
-        # 예측할 컬럼
-        prediction_cols = ['매출액', '당기순이익']
+        # 예측할 주요 재무 컬럼
+        prediction_cols = ['자산총계', '부채총계', '자본총계', '매출액', '영업이익', '당기순이익']
         
         # 시계열 인덱스 생성
         time_index = np.arange(len(df))
         
-        # 예측 결과를 저장할 리스트
-        future_predictions = []
+        # 예측 결과를 저장할 딕셔너리
+        future_predictions = {}
 
         # 다음 8개 분기 예측
         future_steps = 8
@@ -109,35 +109,43 @@ try:
 
         for col in prediction_cols:
             # 선형 회귀 모델 학습
-            coeffs = np.polyfit(time_index, df[col], 1)
+            coeffs = np.polyfit(time_index, df[col].astype(float), 1)
             model = np.poly1d(coeffs)
             
             # 미래 값 예측
             future_values = model(future_index)
-            future_predictions.append(future_values)
+            future_predictions[col] = future_values
 
-        # 예측된 데이터를 담을 DataFrame 생성
+        # 예측된 분기 및 날짜 생성
         last_year = int(df['날짜'].iloc[-1].split('-')[0])
         last_quarter_str = df['분기'].iloc[-1].split('년 ')[1]
         last_quarter = int(last_quarter_str.split('분기')[0]) if '분기' in last_quarter_str else 0
         
         future_quarters = []
+        future_dates = []
         current_year = last_year
         current_quarter = last_quarter
-        for _ in range(future_steps):
+        for i in range(future_steps):
             current_quarter += 1
             if current_quarter > 4:
                 current_quarter = 1
                 current_year += 1
             future_quarters.append(f"{current_year}년 {current_quarter}분기")
+            future_dates.append(f"{current_year}-Q{current_quarter}")
 
         # 예측 DataFrame 생성
-        forecast_df = pd.DataFrame({
-            '분기': future_quarters,
-            '매출액': future_predictions[0],
-            '당기순이익': future_predictions[1],
-            '구분': '예측'
-        })
+        forecast_df = pd.DataFrame(future_predictions)
+        forecast_df['기업명'] = company_name
+        forecast_df['날짜'] = future_dates
+        forecast_df['분기'] = future_quarters
+        forecast_df['구분'] = '예측'
+
+        # 예측된 값을 기반으로 파생 지표 계산
+        forecast_df['수익성 상태'] = forecast_df['당기순이익'].apply(lambda x: '흑자' if x > 0 else '적자')
+        forecast_df['영업이익률'] = forecast_df.apply(lambda row: row['영업이익'] / row['매출액'] if row['매출액'] != 0 else 0, axis=1)
+        forecast_df['순이익률'] = forecast_df.apply(lambda row: row['당기순이익'] / row['매출액'] if row['매출액'] != 0 else 0, axis=1)
+        forecast_df['ROA'] = forecast_df.apply(lambda row: row['당기순이익'] / row['자산총계'] if row['자산총계'] != 0 else 0, axis=1)
+        forecast_df['ROE'] = forecast_df.apply(lambda row: row['당기순이익'] / row['자본총계'] if row['자본총계'] != 0 else 0, axis=1)
         
         # 기존 DataFrame에 '구분' 컬럼 추가
         df['구분'] = '실적'
