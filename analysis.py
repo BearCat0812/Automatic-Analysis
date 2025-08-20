@@ -34,9 +34,9 @@ try:
         # 분기별 보고서 코드: 1분기, 반기, 3분기, 사업보고서(4분기)
         report_codes = {
             '1분기': '11013',
-            '2분기(반기)': '11012',
+            '2분기': '11012',
             '3분기': '11014',
-            '4분기(사업보고서)': '11011'
+            '4분기': '11011'
         }
 
         for quarter, report_code in report_codes.items():
@@ -59,8 +59,8 @@ try:
             # 데이터 추출
             extracted_info = {
                 '기업명': company_name,
-                '날짜': f"{year}-{quarter.split('(')[0]}",
-                '분기': f'{year}년 {quarter}'
+                '날짜': f'{year}',
+                '분기': f'{quarter}'
             }
 
             # 연결재무제표(CFS)에서 필요한 계정 과목 값 찾기
@@ -117,9 +117,9 @@ try:
             future_predictions[col] = future_values
 
         # 예측된 분기 및 날짜 생성
-        last_year = int(df['날짜'].iloc[-1].split('-')[0])
-        last_quarter_str = df['분기'].iloc[-1].split('년 ')[1]
-        last_quarter = int(last_quarter_str.split('분기')[0]) if '분기' in last_quarter_str else 0
+        last_year = int(df['날짜'].iloc[-1])
+        last_quarter_str = df['분기'].iloc[-1]
+        last_quarter = int(last_quarter_str.replace('분기', ''))
         
         future_quarters = []
         future_dates = []
@@ -130,8 +130,8 @@ try:
             if current_quarter > 4:
                 current_quarter = 1
                 current_year += 1
-            future_quarters.append(f"{current_year}년 {current_quarter}분기")
-            future_dates.append(f"{current_year}-Q{current_quarter}")
+            future_quarters.append(f"{current_quarter}분기")
+            future_dates.append(f"{current_year}")
 
         # 예측 DataFrame 생성
         forecast_df = pd.DataFrame(future_predictions)
