@@ -3,6 +3,7 @@
 import requests
 import pandas as pd
 import json
+import numpy as np
 
 # ===================================================================
 # 여기에 다시 한번 DART API 키를 입력해주세요.
@@ -74,34 +75,87 @@ try:
     # 리스트를 Pandas DataFrame으로 변환
     df = pd.DataFrame(all_financial_data)
 
-    # 데이터 타입 변환 및 ROA, ROE 계산
+    # 데이터 타입 변환 및 지표 계산
     if not df.empty:
         # 숫자형으로 변환할 컬럼 리스트
         numeric_cols = ['자산총계', '부채총계', '자본총계', '매출액', '영업이익', '당기순이익']
         for col in numeric_cols:
-            # NaN 값을 0으로 채우고, 쉼표를 제거한 후 숫자로 변환
             df[col] = pd.to_numeric(df[col].fillna(0).astype(str).str.replace(',', ''), errors='coerce')
 
-        # 수익성 상태 (흑자/적자) 및 이익률 계산
+        # 수익성 상태 및 이익률 계산
         df['수익성 상태'] = df['당기순이익'].apply(lambda x: '흑자' if x > 0 else '적자')
         df['영업이익률'] = df.apply(lambda row: row['영업이익'] / row['매출액'] if row['매출액'] != 0 else 0, axis=1)
         df['순이익률'] = df.apply(lambda row: row['당기순이익'] / row['매출액'] if row['매출액'] != 0 else 0, axis=1)
         
-        # ROA 및 ROE 계산 (0으로 나누는 경우 방지)
-        # 자산총계 또는 자본총계가 0인 경우, ROA/ROE는 0으로 처리
+        # ROA 및 ROE 계산
         df['ROA'] = df.apply(lambda row: row['당기순이익'] / row['자산총계'] if row['자산총계'] != 0 else 0, axis=1)
         df['ROE'] = df.apply(lambda row: row['당기순이익'] / row['자본총계'] if row['자본총계'] != 0 else 0, axis=1)
 
-        # 컬럼 순서 정리
-        final_columns = ['기업명', '날짜', '분기', '자산총계', '부채총계', '자본총계', 
+        # --- 미래 예측 기능 추가 ---
+        print("\n--- 미래 재무 데이터 예측 시작 ---")
+        
+        # 예측할 컬럼
+        prediction_cols = ['매출액', '당기순이익']
+        
+        # 시계열 인덱스 생성
+        time_index = np.arange(len(df))
+        
+        # 예측 결과를 저장할 리스트
+        future_predictions = []
+
+        # 다음 4개 분기 예측
+        future_steps = 4
+        future_index = np.arange(len(df), len(df) + future_steps)
+
+        for col in prediction_cols:
+            # 선형 회귀 모델 학습
+            coeffs = np.polyfit(time_index, df[col], 1)
+            model = np.poly1d(coeffs)
+            
+            # 미래 값 예측
+            future_values = model(future_index)
+            future_predictions.append(future_values)
+
+        # 예측된 데이터를 담을 DataFrame 생성
+        last_year = int(df['날짜'].iloc[-1].split('-')[0])
+        last_quarter_str = df['분기'].iloc[-1].split('년 ')[1]
+        last_quarter = int(last_quarter_str.split('분기')[0]) if '분기' in last_quarter_str else 0
+        
+        future_quarters = []
+        current_year = last_year
+        current_quarter = last_quarter
+        for _ in range(future_steps):
+            current_quarter += 1
+            if current_quarter > 4:
+                current_quarter = 1
+                current_year += 1
+            future_quarters.append(f"{current_year}년 {current_quarter}분기")
+
+        # 예측 DataFrame 생성
+        forecast_df = pd.DataFrame({
+            '분기': future_quarters,
+            '매출액': future_predictions[0],
+            '당기순이익': future_predictions[1],
+            '구분': '예측'
+        })
+        
+        # 기존 DataFrame에 '구분' 컬럼 추가
+        df['구분'] = '실적'
+
+        # 기존 DataFrame과 예측 DataFrame 합치기
+        df = pd.concat([df, forecast_df], ignore_index=True)
+        
+        print("--- 미래 재무 데이터 예측 완료 ---")
+
+        # --- 컬럼 순서 정리 및 파일 저장 ---
+        final_columns = ['기업명', '날짜', '분기', '구분', '자산총계', '부채총계', '자본총계', 
                          '매출액', '영업이익', '당기순이익', '수익성 상태', '영업이익률', '순이익률', 'ROA', 'ROE']
         df = df.reindex(columns=final_columns)
 
-    # Excel 파일로 저장
         output_filename = f'{company_name}_{start_year}-{end_year}_재무분석_requests.xlsx'
-    df.to_excel(output_filename, index=False, float_format='%.4f')
+        df.to_excel(output_filename, index=False, float_format='%.4f')
 
-    print(f"\n분석 완료! 모든 결과가 '{output_filename}' 파일로 저장되었습니다.")
+        print(f"\n분석 및 예측 완료! 모든 결과가 '{output_filename}' 파일로 저장되었습니다.")
 
 except Exception as e:
     print(f"스크립트 실행 중 오류가 발생했습니다: {e}")
