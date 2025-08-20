@@ -74,14 +74,27 @@ try:
     # 리스트를 Pandas DataFrame으로 변환
     df = pd.DataFrame(all_financial_data)
 
-    # 컬럼 순서 정리
+    # 데이터 타입 변환 및 ROA, ROE 계산
     if not df.empty:
-        final_columns = ['기업명', '날짜', '분기', '자산총계', '부채총계', '자본총계', '매출액', '영업이익', '당기순이익']
+        # 숫자형으로 변환할 컬럼 리스트
+        numeric_cols = ['자산총계', '부채총계', '자본총계', '매출액', '영업이익', '당기순이익']
+        for col in numeric_cols:
+            # NaN 값을 0으로 채우고, 쉼표를 제거한 후 숫자로 변환
+            df[col] = pd.to_numeric(df[col].fillna(0).astype(str).str.replace(',', ''), errors='coerce')
+
+        # ROA 및 ROE 계산 (0으로 나누는 경우 방지)
+        # 자산총계 또는 자본총계가 0인 경우, ROA/ROE는 0으로 처리
+        df['ROA'] = df.apply(lambda row: row['당기순이익'] / row['자산총계'] if row['자산총계'] != 0 else 0, axis=1)
+        df['ROE'] = df.apply(lambda row: row['당기순이익'] / row['자본총계'] if row['자본총계'] != 0 else 0, axis=1)
+
+        # 컬럼 순서 정리
+        final_columns = ['기업명', '날짜', '분기', '자산총계', '부채총계', '자본총계', 
+                         '매출액', '영업이익', '당기순이익', 'ROA', 'ROE']
         df = df.reindex(columns=final_columns)
 
     # Excel 파일로 저장
-    output_filename = f'{company_name}_{start_year}-{end_year}_재무분석_requests.xlsx'
-    df.to_excel(output_filename, index=False)
+        output_filename = f'{company_name}_{start_year}-{end_year}_재무분석_requests.xlsx'
+    df.to_excel(output_filename, index=False, float_format='%.4f')
 
     print(f"\n분석 완료! 모든 결과가 '{output_filename}' 파일로 저장되었습니다.")
 
