@@ -103,8 +103,8 @@ try:
         # 예측 결과를 저장할 리스트
         future_predictions = []
 
-        # 다음 4개 분기 예측
-        future_steps = 4
+        # 다음 8개 분기 예측
+        future_steps = 8
         future_index = np.arange(len(df), len(df) + future_steps)
 
         for col in prediction_cols:
