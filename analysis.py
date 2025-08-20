@@ -82,6 +82,11 @@ try:
             # NaN 값을 0으로 채우고, 쉼표를 제거한 후 숫자로 변환
             df[col] = pd.to_numeric(df[col].fillna(0).astype(str).str.replace(',', ''), errors='coerce')
 
+        # 수익성 상태 (흑자/적자) 및 이익률 계산
+        df['수익성 상태'] = df['당기순이익'].apply(lambda x: '흑자' if x > 0 else '적자')
+        df['영업이익률'] = df.apply(lambda row: row['영업이익'] / row['매출액'] if row['매출액'] != 0 else 0, axis=1)
+        df['순이익률'] = df.apply(lambda row: row['당기순이익'] / row['매출액'] if row['매출액'] != 0 else 0, axis=1)
+        
         # ROA 및 ROE 계산 (0으로 나누는 경우 방지)
         # 자산총계 또는 자본총계가 0인 경우, ROA/ROE는 0으로 처리
         df['ROA'] = df.apply(lambda row: row['당기순이익'] / row['자산총계'] if row['자산총계'] != 0 else 0, axis=1)
@@ -89,7 +94,7 @@ try:
 
         # 컬럼 순서 정리
         final_columns = ['기업명', '날짜', '분기', '자산총계', '부채총계', '자본총계', 
-                         '매출액', '영업이익', '당기순이익', 'ROA', 'ROE']
+                         '매출액', '영업이익', '당기순이익', '수익성 상태', '영업이익률', '순이익률', 'ROA', 'ROE']
         df = df.reindex(columns=final_columns)
 
     # Excel 파일로 저장
