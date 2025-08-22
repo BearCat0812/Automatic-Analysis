@@ -41,8 +41,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
 
             for quarter, report_code in report_codes.items():
                 print(f"  {year}년 {quarter} 보고서 데이터를 조회 중...")
-                url = (
-                       f'https://opendart.fss.or.kr/api/fnlttMultiAcnt.json?'
+                url = (f'https://opendart.fss.or.kr/api/fnlttMultiAcnt.json?'
                        f'crtfc_key={api_key}&corp_code={corp_code}'
                        f'&bsns_year={year}&reprt_code={report_code}')
                 
@@ -149,15 +148,16 @@ if __name__ == "__main__":
         # 모든 결과를 하나의 DataFrame으로 합치기
         final_df = pd.concat(all_results, ignore_index=True)
 
-        # --- 회사별 성장률 계산 (* 100 적용) ---
+        # --- 회사별 성장률 계산 ---
         final_df['매출액_성장률'] = final_df.groupby('기업명')['매출액'].pct_change(periods=4) * 100
         final_df['영업이익_성장률'] = final_df.groupby('기업명')['영업이익'].pct_change(periods=4) * 100
+        final_df['당기순이익_성장률'] = final_df.groupby('기업명')['당기순이익'].pct_change(periods=4) * 100
 
         # --- 컬럼 순서 정리 및 파일 저장 ---
         final_columns = [
             '기업명', '날짜', '분기', '구분', '자산총계', '부채총계', '자본총계', 
             '매출액', '영업이익', '영업비용', '당기순이익', '수익성 상태', 
-            '매출액_성장률', '영업이익_성장률', '영업이익률', '순이익률', '영업비용률', 
+            '매출액_성장률', '영업이익_성장률', '당기순이익_성장률', '영업이익률', '순이익률', '영업비용률', 
             'ROA', 'ROE'
         ]
         final_df = final_df.reindex(columns=final_columns)
