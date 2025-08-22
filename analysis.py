@@ -4,7 +4,7 @@ import json
 import numpy as np
 
 # ===================================================================
-# 여기에 다시 한번 DART API 키를 입력해주세요.
+# 여기에 DART API 키를 입력해주세요.
 api_key = '2725c0dbcde7679f9c840041541f9b6c9adb9d30'
 # ===================================================================
 
@@ -81,21 +81,43 @@ def analyze_company(company_name, corp_code, start_year, end_year):
         df['영업비용'] = df['매출액'] - df['영업이익']
         df['영업비용률'] = df.apply(lambda row: (row['영업비용'] / row['매출액']) * 100 if row['매출액'] != 0 else 0, axis=1)
 
-        print(f"\n--- {company_name}: 미래 재무 데이터 예측 시작 ---")
+        print(f"\n--- {company_name}: 미래 재무 데이터 예측 시작 (성장률 기반) ---")
         prediction_cols = ['자산총계', '부채총계', '자본총계', '매출액', '영업이익', '당기순이익']
-        time_index = np.arange(len(df))
         future_predictions = {}
         future_steps = 8
-        future_index = np.arange(len(df), len(df) + future_steps)
 
         for col in prediction_cols:
-            if not df[col].dropna().empty:
-                coeffs = np.polyfit(time_index, df[col].astype(float), 1)
-                model = np.poly1d(coeffs)
-                future_values = model(future_index)
-                future_predictions[col] = future_values
-            else:
-                future_predictions[col] = [np.nan] * future_steps
+            # 연간 성장률(YoY) 계산 (4분기 기준)
+            yoy_growth = df[col].pct_change(periods=4).dropna()
+            
+            # 성장률의 이상치(inf)를 제외하고 평균 계산
+            avg_growth_rate = yoy_growth[np.isfinite(yoy_growth)].mean()
+
+            # 평균 성장률이 유효하지 않으면(데이터 부족 등) 0으로 처리
+            if pd.isna(avg_growth_rate) or not np.isfinite(avg_growth_rate):
+                avg_growth_rate = 0.0
+            
+            print(f"  - '{col}'의 평균 연간 성장률: {avg_growth_rate:.2%}")
+
+            # 예측값을 저장할 리스트
+            predicted_values = []
+            # 예측의 기반이 될 데이터 (원본 데이터)
+            temp_data = df[[col]].copy()
+
+            for i in range(future_steps):
+                # 1년 전 데이터(실적 또는 바로 이전에 예측된 값)를 가져옴
+                base_idx = len(df) + i - 4
+                base_value = temp_data.iloc[base_idx][col]
+                
+                # 성장률을 적용하여 예측
+                new_value = base_value * (1 + avg_growth_rate)
+                predicted_values.append(new_value)
+                
+                # 예측된 값을 temp_data에 추가하여 다음 예측에 사용
+                new_row = pd.DataFrame({col: [new_value]})
+                temp_data = pd.concat([temp_data, new_row], ignore_index=True)
+
+            future_predictions[col] = predicted_values
 
         last_year = int(df['날짜'].iloc[-1])
         last_quarter = int(df['분기'].iloc[-1].replace('분기', ''))
