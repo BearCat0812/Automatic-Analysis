@@ -1,4 +1,3 @@
-
 import requests
 import pandas as pd
 import json
@@ -42,7 +41,8 @@ def analyze_company(company_name, corp_code, start_year, end_year):
 
             for quarter, report_code in report_codes.items():
                 print(f"  {year}년 {quarter} 보고서 데이터를 조회 중...")
-                url = (f'https://opendart.fss.or.kr/api/fnlttMultiAcnt.json?'
+                url = (
+                       f'https://opendart.fss.or.kr/api/fnlttMultiAcnt.json?'
                        f'crtfc_key={api_key}&corp_code={corp_code}'
                        f'&bsns_year={year}&reprt_code={report_code}')
                 
@@ -73,11 +73,19 @@ def analyze_company(company_name, corp_code, start_year, end_year):
         for col in numeric_cols:
             df[col] = pd.to_numeric(df[col].fillna(0).astype(str).str.replace(',', ''), errors='coerce')
 
+        # --- 기존 지표 계산 ---
         df['수익성 상태'] = df['당기순이익'].apply(lambda x: '흑자' if x > 0 else '적자')
         df['영업이익률'] = df.apply(lambda row: row['영업이익'] / row['매출액'] if row['매출액'] != 0 else 0, axis=1)
         df['순이익률'] = df.apply(lambda row: row['당기순이익'] / row['매출액'] if row['매출액'] != 0 else 0, axis=1)
         df['ROA'] = df.apply(lambda row: row['당기순이익'] / row['자산총계'] if row['자산총계'] != 0 else 0, axis=1)
         df['ROE'] = df.apply(lambda row: row['당기순이익'] / row['자본총계'] if row['자본총계'] != 0 else 0, axis=1)
+
+        # --- 요청하신 신규 지표 계산 ---
+        df['영업비용'] = df['매출액'] - df['영업이익']
+        df['영업비용률'] = df.apply(lambda row: row['영업비용'] / row['매출액'] if row['매출액'] != 0 else 0, axis=1)
+        df['영업이익_ROE'] = df.apply(lambda row: row['영업이익'] / row['자본총계'] if row['자본총계'] != 0 else 0, axis=1)
+        df['매출액_성장률'] = df['매출액'].pct_change(periods=4) # 전년 동기(4분기 전) 대비 성장률
+        df['영업이익_성장률'] = df['영업이익'].pct_change(periods=4) # 전년 동기(4분기 전) 대비 성장률
 
         print(f"\n--- {company_name}: 미래 재무 데이터 예측 시작 ---")
         prediction_cols = ['자산총계', '부채총계', '자본총계', '매출액', '영업이익', '당기순이익']
@@ -87,10 +95,14 @@ def analyze_company(company_name, corp_code, start_year, end_year):
         future_index = np.arange(len(df), len(df) + future_steps)
 
         for col in prediction_cols:
-            coeffs = np.polyfit(time_index, df[col].astype(float), 1)
-            model = np.poly1d(coeffs)
-            future_values = model(future_index)
-            future_predictions[col] = future_values
+            # 빈 데이터프레임에서 polyfit을 시도할 때 발생하는 오류 방지
+            if not df[col].dropna().empty:
+                coeffs = np.polyfit(time_index, df[col].astype(float), 1)
+                model = np.poly1d(coeffs)
+                future_values = model(future_index)
+                future_predictions[col] = future_values
+            else:
+                future_predictions[col] = [np.nan] * future_steps
 
         last_year = int(df['날짜'].iloc[-1])
         last_quarter = int(df['분기'].iloc[-1].replace('분기', ''))
@@ -111,11 +123,17 @@ def analyze_company(company_name, corp_code, start_year, end_year):
         forecast_df['분기'] = future_quarters
         forecast_df['구분'] = '예측'
 
+        # --- 예측 데이터에 대한 지표 계산 ---
         forecast_df['수익성 상태'] = forecast_df['당기순이익'].apply(lambda x: '흑자' if x > 0 else '적자')
         forecast_df['영업이익률'] = forecast_df.apply(lambda row: row['영업이익'] / row['매출액'] if row['매출액'] != 0 else 0, axis=1)
         forecast_df['순이익률'] = forecast_df.apply(lambda row: row['당기순이익'] / row['매출액'] if row['매출액'] != 0 else 0, axis=1)
         forecast_df['ROA'] = forecast_df.apply(lambda row: row['당기순이익'] / row['자산총계'] if row['자산총계'] != 0 else 0, axis=1)
         forecast_df['ROE'] = forecast_df.apply(lambda row: row['당기순이익'] / row['자본총계'] if row['자본총계'] != 0 else 0, axis=1)
+        forecast_df['영업비용'] = forecast_df['매출액'] - forecast_df['영업이익']
+        forecast_df['영업비용률'] = forecast_df.apply(lambda row: row['영업비용'] / row['매출액'] if row['매출액'] != 0 else 0, axis=1)
+        forecast_df['영업이익_ROE'] = forecast_df.apply(lambda row: row['영업이익'] / row['자본총계'] if row['자본총계'] != 0 else 0, axis=1)
+        forecast_df['매출액_성장률'] = np.nan # 예측 데이터에는 성장률을 계산하지 않음
+        forecast_df['영업이익_성장률'] = np.nan # 예측 데이터에는 성장률을 계산하지 않음
         
         df['구분'] = '실적'
         combined_df = pd.concat([df, forecast_df], ignore_index=True)
@@ -141,8 +159,12 @@ if __name__ == "__main__":
         final_df = pd.concat(all_results, ignore_index=True)
 
         # --- 컬럼 순서 정리 및 파일 저장 ---
-        final_columns = ['기업명', '날짜', '분기', '구분', '자산총계', '부채총계', '자본총계', 
-                         '매출액', '영업이익', '당기순이익', '수익성 상태', '영업이익률', '순이익률', 'ROA', 'ROE']
+        final_columns = [
+            '기업명', '날짜', '분기', '구분', '자산총계', '부채총계', '자본총계', 
+            '매출액', '영업이익', '영업비용', '당기순이익', '수익성 상태', 
+            '매출액_성장률', '영업이익_성장률', '영업이익률', '순이익률', '영업비용률', 
+            'ROA', 'ROE', '영업이익_ROE'
+        ]
         final_df = final_df.reindex(columns=final_columns)
 
         # 지정된 파일명으로 저장
