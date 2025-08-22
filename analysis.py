@@ -81,7 +81,6 @@ def analyze_company(company_name, corp_code, start_year, end_year):
         df['ROE'] = df.apply(lambda row: (row['당기순이익'] / row['자본총계']) * 100 if row['자본총계'] != 0 else 0, axis=1)
         df['영업비용'] = df['매출액'] - df['영업이익']
         df['영업비용률'] = df.apply(lambda row: (row['영업비용'] / row['매출액']) * 100 if row['매출액'] != 0 else 0, axis=1)
-        df['영업이익_ROE'] = df.apply(lambda row: (row['영업이익'] / row['자본총계']) * 100 if row['자본총계'] != 0 else 0, axis=1)
 
         print(f"\n--- {company_name}: 미래 재무 데이터 예측 시작 ---")
         prediction_cols = ['자산총계', '부채총계', '자본총계', '매출액', '영업이익', '당기순이익']
@@ -118,7 +117,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
         forecast_df['분기'] = future_quarters
         forecast_df['구분'] = '예측'
 
-        # --- 예측 데이터에 대한 지표 계산 (* 100 적용) ---
+        # --- 예측 데이터에 대한 지표 계산 ---
         forecast_df['수익성 상태'] = forecast_df['당기순이익'].apply(lambda x: '흑자' if x > 0 else '적자')
         forecast_df['영업이익률'] = forecast_df.apply(lambda row: (row['영업이익'] / row['매출액']) * 100 if row['매출액'] != 0 else 0, axis=1)
         forecast_df['순이익률'] = forecast_df.apply(lambda row: (row['당기순이익'] / row['매출액']) * 100 if row['매출액'] != 0 else 0, axis=1)
@@ -126,7 +125,6 @@ def analyze_company(company_name, corp_code, start_year, end_year):
         forecast_df['ROE'] = forecast_df.apply(lambda row: (row['당기순이익'] / row['자본총계']) * 100 if row['자본총계'] != 0 else 0, axis=1)
         forecast_df['영업비용'] = forecast_df['매출액'] - forecast_df['영업이익']
         forecast_df['영업비용률'] = forecast_df.apply(lambda row: (row['영업비용'] / row['매출액']) * 100 if row['매출액'] != 0 else 0, axis=1)
-        forecast_df['영업이익_ROE'] = forecast_df.apply(lambda row: (row['영업이익'] / row['자본총계']) * 100 if row['자본총계'] != 0 else 0, axis=1)
         
         df['구분'] = '실적'
         combined_df = pd.concat([df, forecast_df], ignore_index=True)
@@ -160,7 +158,7 @@ if __name__ == "__main__":
             '기업명', '날짜', '분기', '구분', '자산총계', '부채총계', '자본총계', 
             '매출액', '영업이익', '영업비용', '당기순이익', '수익성 상태', 
             '매출액_성장률', '영업이익_성장률', '영업이익률', '순이익률', '영업비용률', 
-            'ROA', 'ROE', '영업이익_ROE'
+            'ROA', 'ROE'
         ]
         final_df = final_df.reindex(columns=final_columns)
 
