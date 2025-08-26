@@ -4,6 +4,7 @@ import numpy as np
 import zipfile
 import io
 import xml.etree.ElementTree as ET
+import os
 
 # ===================================================================
 # 여기에 DART API 키를 입력해주세요.
@@ -64,9 +65,29 @@ ACCOUNTS_TO_EXTRACT = [
 
 def find_companies_by_industry(api_key, industry_code):
     """
-    corpcode.xml에서 회사 목록을 불러온 뒤,
-    각 회사별 company.json API를 호출하여 induty_code가 일치하는 회사를 찾습니다.
+    companies_{industry_code}.xml 파일이 있으면 이를 읽어오고,
+    없으면 DART API를 호출하여 회사 목록을 찾습니다.
     """
+    filename = f'companies_{industry_code}.xml'
+
+    # 1. 파일이 존재하는지 확인
+    if os.path.exists(filename):
+        print(f"'{filename}' 파일이 이미 존재합니다. 파일을 읽어와서 기업 목록을 불러옵니다.")
+        companies = []
+        try:
+            tree = ET.parse(filename)
+            root = tree.getroot()
+            for company in root.findall('company'):
+                corp_name = company.find('corp_name').text
+                corp_code = company.find('corp_code').text
+                companies.append((corp_name, corp_code))
+            return companies
+        except Exception as e:
+            print(f"'{filename}' 파일 파싱 중 오류 발생: {e}")
+            return []
+
+    # 2. 파일이 없으면 기존 로직 실행 (DART API 호출)
+    print(f"'{filename}' 파일이 없어 DART API로 기업을 검색합니다.")
     try:
         tree = ET.parse('corpcode.xml')
         root = tree.getroot()
@@ -143,11 +164,11 @@ def analyze_company(company_name, corp_code, start_year, end_year):
         company_data = response.json()
         if company_data['status'] == '000':
             induty_code = company_data.get('induty_code')
-            print(f"  -> 업종 코드: {induty_code} (회사명: {company_data.get('corp_name')})")
+            print(f"   -> 업종 코드: {induty_code} (회사명: {company_data.get('corp_name')})")
         else:
-            print(f"  -> 회사 개황 API 오류: {company_data['message']}")
+            print(f"   -> 회사 개황 API 오류: {company_data['message']}")
     except Exception as e:
-        print(f"  -> 회사 개황 정보 조회 중 오류 발생: {e}")
+        print(f"   -> 회사 개황 정보 조회 중 오류 발생: {e}")
     print(f"--- {company_name}: 회사 개황 정보 조회 완료 ---")
 
     all_financial_data = []
@@ -158,7 +179,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
             report_codes = {'1분기': '11013', '2분기': '11012', '3분기': '11014', '4분기': '11011'}
 
             for quarter, report_code in report_codes.items():
-                print(f"  {year}년 {quarter} 보고서 데이터를 조회 중...")
+                print(f"   {year}년 {quarter} 보고서 데이터를 조회 중...")
                 url = (
                         f'https://opendart.fss.or.kr/api/fnlttMultiAcnt.json?'
                         f'crtfc_key={api_key}&corp_code={corp_code}'
@@ -166,12 +187,12 @@ def analyze_company(company_name, corp_code, start_year, end_year):
                 
                 response = requests.get(url)
                 if response.status_code != 200:
-                    print(f"  -> 서버 오류 발생 (코드: {response.status_code})")
+                    print(f"   -> 서버 오류 발생 (코드: {response.status_code})")
                     continue
 
                 data = response.json()
                 if data['status'] != '000':
-                    print(f"  -> API 오류: {data['message']}")
+                    print(f"   -> API 오류: {data['message']}")
                     continue
 
                 extracted_info = {'기업명': company_name, '날짜': f'{year}', '분기': f'{quarter}', '업종코드': induty_code}
@@ -179,7 +200,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
                     if item['fs_div'] == 'CFS' and item['account_nm'] in ACCOUNTS_TO_EXTRACT:
                         extracted_info[item['account_nm']] = item['thstrm_amount']
                 all_financial_data.append(extracted_info)
-                print(f"  -> {year}년 {quarter} 데이터 추출 완료.")
+                print(f"   -> {year}년 {quarter} 데이터 추출 완료.")
             print(f"--- {company_name}: {year}년 데이터 조회 완료 ---")
 
         df = pd.DataFrame(all_financial_data)
@@ -217,7 +238,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
             if pd.isna(avg_growth_rate) or not np.isfinite(avg_growth_rate):
                 avg_growth_rate = 0.0
             
-            print(f"  - '{col}'의 평균 연간 성장률: {avg_growth_rate:.2%}")
+            print(f"   - '{col}'의 평균 연간 성장률: {avg_growth_rate:.2%}")
 
             # 예측값을 저장할 리스트
             predicted_values = []
