@@ -16,10 +16,11 @@ end_year = 2024
 
 # 계정 과목 이름 (DART API가 반환하는 이름)
 ACCOUNTS_TO_EXTRACT = [
-    '자산총계', '부채총계', '자본총계', 
+    '자산총계', '부채총계', '자본총계',
     '매출액', '영업이익', '당기순이익'
 ]
 
+# 임시: corpcode.xml 파일이 이미 있다고 가정
 # def get_corp_codes(key):
 #     """
 #     DART에서 제공하는 전체 회사 고유번호를 다운로드하여 corpcode.xml로 저장합니다.
@@ -83,8 +84,8 @@ def find_companies_by_industry(api_key, industry_code):
                     continue
                 data = response.json()
                 if data.get("status") == "000":
-                    induty_code = data.get("induty_code")
-                    if induty_code == industry_code:
+                    induty_code_from_api = data.get("induty_code")
+                    if induty_code_from_api == industry_code:
                         companies.append((corp_name, corp_code))
             except Exception as e:
                 print(f"회사 개황 조회 오류 ({corp_name}): {e}")
@@ -97,6 +98,32 @@ def find_companies_by_industry(api_key, industry_code):
     except Exception as e:
         print(f"XML 파싱 중 오류 발생: {e}")
         return []
+
+def save_companies_to_xml(companies, industry_code):
+    """
+    특정 업종에 속하는 기업 목록을 XML 파일로 저장하는 함수.
+    
+    Args:
+        companies (list): (기업명, 기업코드) 튜플의 리스트.
+        industry_code (str): 업종 코드.
+    """
+    root = ET.Element('companies')
+    root.set('industry_code', industry_code)
+    
+    for name, code in companies:
+        company_elem = ET.SubElement(root, 'company')
+        corp_name_elem = ET.SubElement(company_elem, 'corp_name')
+        corp_name_elem.text = name
+        corp_code_elem = ET.SubElement(company_elem, 'corp_code')
+        corp_code_elem.text = code
+
+    tree = ET.ElementTree(root)
+    filename = f'companies_{industry_code}.xml'
+    try:
+        tree.write(filename, encoding='utf-8', xml_declaration=True)
+        print(f"\n'{industry_code}' 업종의 기업 목록이 '{filename}' 파일로 저장되었습니다.")
+    except Exception as e:
+        print(f"XML 파일 저장 중 오류 발생: {e}")
 
 def analyze_company(company_name, corp_code, start_year, end_year):
     """
@@ -133,9 +160,9 @@ def analyze_company(company_name, corp_code, start_year, end_year):
             for quarter, report_code in report_codes.items():
                 print(f"  {year}년 {quarter} 보고서 데이터를 조회 중...")
                 url = (
-                       f'https://opendart.fss.or.kr/api/fnlttMultiAcnt.json?'
-                       f'crtfc_key={api_key}&corp_code={corp_code}'
-                       f'&bsns_year={year}&reprt_code={report_code}')
+                        f'https://opendart.fss.or.kr/api/fnlttMultiAcnt.json?'
+                        f'crtfc_key={api_key}&corp_code={corp_code}'
+                        f'&bsns_year={year}&reprt_code={report_code}')
                 
                 response = requests.get(url)
                 if response.status_code != 200:
@@ -253,6 +280,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
 # 메인 실행 로직
 # ===================================================================
 if __name__ == "__main__":
+    # 임시: corpcode.xml 파일이 이미 있다고 가정
     # if not get_corp_codes(api_key):
     #     exit()
 
@@ -264,6 +292,10 @@ if __name__ == "__main__":
         print(f"입력하신 업종 코드 '{target_induty_code}'에 해당하는 회사를 찾을 수 없습니다.")
     else:
         print(f"\n'{target_induty_code}' 업종의 {len(companies_to_analyze)}개 회사를 분석합니다.")
+        
+        # XML 파일로 저장하는 부분 추가
+        save_companies_to_xml(companies_to_analyze, target_induty_code)
+
         all_results = []
         for name, code in companies_to_analyze:
             result_df = analyze_company(name, code, start_year, end_year)
