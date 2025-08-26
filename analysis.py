@@ -242,7 +242,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
             '기업명': [company_name] * 4,
             '날짜': future_dates,
             '분기': future_quarters,
-            '구분': ['예측'] * 4,
+            '구분': ['개선'] * 4,
             '업종코드': [induty_code] * 4
         })
         
