@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import zipfile
 import io
+import xml.etree.ElementTree as ET
 
 # ===================================================================
 # 여기에 DART API 키를 입력해주세요.
@@ -13,58 +14,89 @@ api_key = '2725c0dbcde7679f9c840041541f9b6c9adb9d30'
 start_year = 2020
 end_year = 2024
 
-# 분석할 회사 목록: (회사명, DART 고유번호)
-companies_to_analyze = [
-    ('삼성전자', '00126380'),
-    ('LG전자', '00401731')
-]
-
 # 계정 과목 이름 (DART API가 반환하는 이름)
 ACCOUNTS_TO_EXTRACT = [
     '자산총계', '부채총계', '자본총계', 
     '매출액', '영업이익', '당기순이익'
 ]
 
-def get_corp_codes(key):
-    """
-    DART에서 제공하는 전체 회사 고유번호를 다운로드하여 corpcode.xml로 저장합니다.
-    """
-    print("DART 전체 회사 고유번호를 다운로드합니다...")
-    url = f'https://opendart.fss.or.kr/api/corpCode.xml?crtfc_key={key}'
-    response = None
-    try:
-        response = requests.get(url)
-        response.raise_for_status()  # 요청이 성공적이지 않으면 예외 발생
+# def get_corp_codes(key):
+#     """
+#     DART에서 제공하는 전체 회사 고유번호를 다운로드하여 corpcode.xml로 저장합니다.
+#     """
+#     print("DART 전체 회사 고유번호를 다운로드합니다...")
+#     url = f'https://opendart.fss.or.kr/api/corpCode.xml?crtfc_key={key}'
+#     response = None
+#     try:
+#         response = requests.get(url)
+#         response.raise_for_status()  # 요청이 성공적이지 않으면 예외 발생
 
-        # ZIP 파일이므로 in-memory에서 처리
-        with zipfile.ZipFile(io.BytesIO(response.content)) as z:
-            # ZIP 파일 내의 CORPCODE.xml 파일 읽기 (대문자로 명시)
-            with z.open('CORPCODE.xml') as corp_code_file:
-                # 파일 내용을 읽어서 UTF-8로 디코딩
-                xml_content = corp_code_file.read().decode('utf-8')
+#         # ZIP 파일이므로 in-memory에서 처리
+#         with zipfile.ZipFile(io.BytesIO(response.content)) as z:
+#             # ZIP 파일 내의 CORPCODE.xml 파일 읽기 (대문자로 명시)
+#             with z.open('CORPCODE.xml') as corp_code_file:
+#                 # 파일 내용을 읽어서 UTF-8로 디코딩
+#                 xml_content = corp_code_file.read().decode('utf-8')
 
-                # corpcode.xml 파일로 저장
-                with open('corpcode.xml', 'w', encoding='utf-8') as f:
-                    f.write(xml_content)
+#                 # corpcode.xml 파일로 저장
+#                 with open('corpcode.xml', 'w', encoding='utf-8') as f:
+#                     f.write(xml_content)
                 
-                print("corpcode.xml 파일이 성공적으로 저장되었습니다.")
-                return True
+#                 print("corpcode.xml 파일이 성공적으로 저장되었습니다.")
+#                 return True
 
-    except requests.exceptions.RequestException as e:
-        print(f"HTTP 요청 중 오류가 발생했습니다: {e}")
-        return False
-    except zipfile.BadZipFile:
-        print("다운로드한 파일이 유효한 ZIP 파일이 아닙니다. API 키가 유효한지 확인해보세요.")
-        if response:
-            print("서버 응답 내용 (앞 500자):")
-            print(response.content[:500].decode('utf-8', errors='ignore'))
-        return False
+#     except requests.exceptions.RequestException as e:
+#         print(f"HTTP 요청 중 오류가 발생했습니다: {e}")
+#         return False
+#     except zipfile.BadZipFile:
+#         print("다운로드한 파일이 유효한 ZIP 파일이 아닙니다. API 키가 유효한지 확인해보세요.")
+#         if response:
+#             print("서버 응답 내용 (앞 500자):")
+#             print(response.content[:500].decode('utf-8', errors='ignore'))
+#         return False
+#     except Exception as e:
+#         print(f"ZIP 파일 처리 중 오류가 발생했습니다: {e}")
+#         if response:
+#             print("서버 응답 내용 (앞 500자):")
+#             print(response.content[:500].decode('utf-8', errors='ignore'))
+#         return False
+
+def find_companies_by_industry(api_key, industry_code):
+    """
+    corpcode.xml에서 회사 목록을 불러온 뒤,
+    각 회사별 company.json API를 호출하여 induty_code가 일치하는 회사를 찾습니다.
+    """
+    try:
+        tree = ET.parse('corpcode.xml')
+        root = tree.getroot()
+        companies = []
+
+        for company in root.findall('list'):
+            corp_name = company.find('corp_name').text
+            corp_code = company.find('corp_code').text
+
+            # 회사 개황 API 호출 (induty_code 확인)
+            url = f'https://opendart.fss.or.kr/api/company.json?crtfc_key={api_key}&corp_code={corp_code}'
+            try:
+                response = requests.get(url)
+                if response.status_code != 200:
+                    continue
+                data = response.json()
+                if data.get("status") == "000":
+                    induty_code = data.get("induty_code")
+                    if induty_code == industry_code:
+                        companies.append((corp_name, corp_code))
+            except Exception as e:
+                print(f"회사 개황 조회 오류 ({corp_name}): {e}")
+                continue
+
+        return companies
+    except FileNotFoundError:
+        print("'corpcode.xml' 파일을 찾을 수 없습니다. 먼저 DART 고유번호 파일을 다운로드해야 합니다.")
+        return []
     except Exception as e:
-        print(f"ZIP 파일 처리 중 오류가 발생했습니다: {e}")
-        if response:
-            print("서버 응답 내용 (앞 500자):")
-            print(response.content[:500].decode('utf-8', errors='ignore'))
-        return False
+        print(f"XML 파싱 중 오류 발생: {e}")
+        return []
 
 def analyze_company(company_name, corp_code, start_year, end_year):
     """
@@ -72,7 +104,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
     """
     print(f"\n{'='*50}")
     print(f"{start_year}년부터 {end_year}년까지 {company_name}의 재무 정보 분석을 시작합니다.")
-    print(f"{'{'}={'='*50}\n")
+    print(f"{'='*50}\n")
 
     # --- 1. 회사 개황 정보 조회 (업종 코드 포함) ---
     induty_code = None
@@ -89,7 +121,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
             print(f"  -> 회사 개황 API 오류: {company_data['message']}")
     except Exception as e:
         print(f"  -> 회사 개황 정보 조회 중 오류 발생: {e}")
-    print(f"--- {company_name}: 회사 개황 정보 조회 완료 ---\n")
+    print(f"--- {company_name}: 회사 개황 정보 조회 완료 ---")
 
     all_financial_data = []
 
@@ -121,7 +153,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
                         extracted_info[item['account_nm']] = item['thstrm_amount']
                 all_financial_data.append(extracted_info)
                 print(f"  -> {year}년 {quarter} 데이터 추출 완료.")
-            print(f"--- {company_name}: {year}년 데이터 조회 완료 ---\n")
+            print(f"--- {company_name}: {year}년 데이터 조회 완료 ---")
 
         df = pd.DataFrame(all_financial_data)
 
@@ -141,6 +173,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
         df['영업비용'] = df['매출액'] - df['영업이익']
         df['영업비용률'] = df.apply(lambda row: (row['영업비용'] / row['매출액']) * 100 if row['매출액'] != 0 else 0, axis=1)
 
+        # --- 미래 예측 ---
         print(f"\n--- {company_name}: 미래 재무 데이터 예측 시작 (성장률 기반) ---")
         prediction_cols = ['자산총계', '부채총계', '자본총계', '매출액', '영업이익', '당기순이익']
         future_predictions = {}
@@ -214,45 +247,48 @@ def analyze_company(company_name, corp_code, start_year, end_year):
 
     except Exception as e:
         print(f"\n*** {company_name} 처리 중 오류가 발생했습니다: {e} ***")
-        return pd.DataFrame() # 오류 발생 시 빈 DataFrame 반환
+        return pd.DataFrame()
 
 # ===================================================================
 # 메인 실행 로직
 # ===================================================================
 if __name__ == "__main__":
-    # DART 고유번호 파일 다운로드
-    get_corp_codes(api_key)
+    # if not get_corp_codes(api_key):
+    #     exit()
 
-    all_results = []
-    for name, code in companies_to_analyze:
-        result_df = analyze_company(name, code, start_year, end_year)
-        if not result_df.empty:
-            all_results.append(result_df)
+    target_induty_code = input("분석할 업종 코드를 입력하세요: ")
 
-    if all_results:
-        # 모든 결과를 하나의 DataFrame으로 합치기
-        final_df = pd.concat(all_results, ignore_index=True)
+    companies_to_analyze = find_companies_by_industry(api_key, target_induty_code)
 
-        # --- 회사별 성장률 계산 ---
-        final_df['매출액_성장률'] = final_df.groupby('기업명')['매출액'].pct_change(periods=4) * 100
-        final_df['영업이익_성장률'] = final_df.groupby('기업명')['영업이익'].pct_change(periods=4) * 100
-        final_df['당기순이익_성장률'] = final_df.groupby('기업명')['당기순이익'].pct_change(periods=4) * 100
-
-        # --- 컬럼 순서 정리 및 파일 저장 ---
-        final_columns = [
-            '기업명', '날짜', '분기', '구분', '업종코드', '자산총계', '부채총계', '자본총계', 
-            '매출액', '영업이익', '영업비용', '당기순이익', '수익성 상태', 
-            '매출액_성장률', '영업이익_성장률', '당기순이익_성장률', '영업이익률', '순이익률', '영업비용률', 
-            'ROA', 'ROE'
-        ]
-        final_df = final_df.reindex(columns=final_columns)
-
-        # 지정된 파일명으로 저장
-        output_filename = f'{companies_to_analyze[0][0]}_{start_year}-{end_year}_재무분석_requests.xlsx'
-        final_df.to_excel(output_filename, index=False, float_format='%.4f')
-
-        print(f"\n\n{'='*50}")
-        print(f"모든 분석 및 예측 완료! 결과가 '{output_filename}' 파일로 저장되었습니다.")
-        print(f"{'{'}={'='*50}")
+    if not companies_to_analyze:
+        print(f"입력하신 업종 코드 '{target_induty_code}'에 해당하는 회사를 찾을 수 없습니다.")
     else:
-        print("\n\n분석할 데이터가 없거나 오류가 발생하여 파일을 생성하지 않았습니다.")
+        print(f"\n'{target_induty_code}' 업종의 {len(companies_to_analyze)}개 회사를 분석합니다.")
+        all_results = []
+        for name, code in companies_to_analyze:
+            result_df = analyze_company(name, code, start_year, end_year)
+            if not result_df.empty:
+                all_results.append(result_df)
+
+        if all_results:
+            final_df = pd.concat(all_results, ignore_index=True)
+            final_df['매출액_성장률'] = final_df.groupby('기업명')['매출액'].pct_change(periods=4) * 100
+            final_df['영업이익_성장률'] = final_df.groupby('기업명')['영업이익'].pct_change(periods=4) * 100
+            final_df['당기순이익_성장률'] = final_df.groupby('기업명')['당기순이익'].pct_change(periods=4) * 100
+
+            final_columns = [
+                '기업명', '날짜', '분기', '구분', '업종코드', '자산총계', '부채총계', '자본총계', 
+                '매출액', '영업이익', '영업비용', '당기순이익', '수익성 상태', 
+                '매출액_성장률', '영업이익_성장률', '당기순이익_성장률', '영업이익률', '순이익률', '영업비용률', 
+                'ROA', 'ROE'
+            ]
+            final_df = final_df.reindex(columns=final_columns)
+
+            output_filename = f'업종분석_{target_induty_code}_{start_year}-{end_year}.xlsx'
+            final_df.to_excel(output_filename, index=False, float_format='%.4f')
+
+            print(f"\n\n{'='*50}")
+            print(f"모든 분석 및 예측 완료! 결과가 '{output_filename}' 파일로 저장되었습니다.")
+            print(f"{'='*50}")
+        else:
+            print("\n\n분석할 데이터가 없거나 오류가 발생하여 파일을 생성하지 않았습니다.")
