@@ -225,7 +225,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
         print(f"\n--- {company_name}: 미래 재무 데이터 예측 시작 (성장률 기반) ---")
         prediction_cols = ['자산총계', '부채총계', '자본총계', '매출액', '영업이익', '당기순이익']
         future_predictions = {}
-        future_steps = 8
+        future_steps = 4    # 4분기 예측
 
         for col in prediction_cols:
             # 연간 성장률(YoY) 계산 (4분기 기준)
