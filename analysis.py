@@ -148,7 +148,7 @@ def save_companies_to_xml(companies, industry_code):
 
 def analyze_company(company_name, corp_code, start_year, end_year):
     """
-    지정된 회사의 재무 데이터를 분석하고 예측하여 DataFrame을 반환하는 함수
+    지정된 회사의 재무 데이터를 분석하고 DataFrame을 반환하는 함수 (예측 기능 제거)
     """
     print(f"\n{'='*50}")
     print(f"{start_year}년부터 {end_year}년까지 {company_name}의 재무 정보 분석을 시작합니다.")
@@ -164,11 +164,11 @@ def analyze_company(company_name, corp_code, start_year, end_year):
         company_data = response.json()
         if company_data['status'] == '000':
             induty_code = company_data.get('induty_code')
-            print(f"   -> 업종 코드: {induty_code} (회사명: {company_data.get('corp_name')})")
+            print(f"   -> 업종 코드: {induty_code} (회사명: {company_data.get('corp_name')})")
         else:
-            print(f"   -> 회사 개황 API 오류: {company_data['message']}")
+            print(f"   -> 회사 개황 API 오류: {company_data['message']}")
     except Exception as e:
-        print(f"   -> 회사 개황 정보 조회 중 오류 발생: {e}")
+        print(f"   -> 회사 개황 정보 조회 중 오류 발생: {e}")
     print(f"--- {company_name}: 회사 개황 정보 조회 완료 ---")
 
     all_financial_data = []
@@ -179,7 +179,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
             report_codes = {'1분기': '11013', '2분기': '11012', '3분기': '11014', '4분기': '11011'}
 
             for quarter, report_code in report_codes.items():
-                print(f"   {year}년 {quarter} 보고서 데이터를 조회 중...")
+                print(f"   {year}년 {quarter} 보고서 데이터를 조회 중...")
                 url = (
                         f'https://opendart.fss.or.kr/api/fnlttMultiAcnt.json?'
                         f'crtfc_key={api_key}&corp_code={corp_code}'
@@ -187,12 +187,12 @@ def analyze_company(company_name, corp_code, start_year, end_year):
                 
                 response = requests.get(url)
                 if response.status_code != 200:
-                    print(f"   -> 서버 오류 발생 (코드: {response.status_code})")
+                    print(f"   -> 서버 오류 발생 (코드: {response.status_code})")
                     continue
 
                 data = response.json()
                 if data['status'] != '000':
-                    print(f"   -> API 오류: {data['message']}")
+                    print(f"   -> API 오류: {data['message']}")
                     continue
 
                 extracted_info = {'기업명': company_name, '날짜': f'{year}', '분기': f'{quarter}', '업종코드': induty_code}
@@ -200,7 +200,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
                     if item['fs_div'] == 'CFS' and item['account_nm'] in ACCOUNTS_TO_EXTRACT:
                         extracted_info[item['account_nm']] = item['thstrm_amount']
                 all_financial_data.append(extracted_info)
-                print(f"   -> {year}년 {quarter} 데이터 추출 완료.")
+                print(f"   -> {year}년 {quarter} 데이터 추출 완료.")
             print(f"--- {company_name}: {year}년 데이터 조회 완료 ---")
 
         df = pd.DataFrame(all_financial_data)
@@ -221,51 +221,15 @@ def analyze_company(company_name, corp_code, start_year, end_year):
         df['영업비용'] = df['매출액'] - df['영업이익']
         df['영업비용률'] = df.apply(lambda row: (row['영업비용'] / row['매출액']) * 100 if row['매출액'] != 0 else 0, axis=1)
 
-        # --- 미래 예측 ---
-        print(f"\n--- {company_name}: 미래 재무 데이터 예측 시작 (성장률 기반) ---")
-        prediction_cols = ['자산총계', '부채총계', '자본총계', '매출액', '영업이익', '당기순이익']
-        future_predictions = {}
-        future_steps = 4    # 4분기 예측
-
-        for col in prediction_cols:
-            # 연간 성장률(YoY) 계산 (4분기 기준)
-            yoy_growth = df[col].pct_change(periods=4).dropna()
-            
-            # 성장률의 이상치(inf)를 제외하고 평균 계산
-            avg_growth_rate = yoy_growth[np.isfinite(yoy_growth)].mean()
-
-            # 평균 성장률이 유효하지 않으면(데이터 부족 등) 0으로 처리
-            if pd.isna(avg_growth_rate) or not np.isfinite(avg_growth_rate):
-                avg_growth_rate = 0.0
-            
-            print(f"   - '{col}'의 평균 연간 성장률: {avg_growth_rate:.2%}")
-
-            # 예측값을 저장할 리스트
-            predicted_values = []
-            # 예측의 기반이 될 데이터 (원본 데이터)
-            temp_data = df[[col]].copy()
-
-            for i in range(future_steps):
-                # 1년 전 데이터(실적 또는 바로 이전에 예측된 값)를 가져옴
-                base_idx = len(df) + i - 4
-                base_value = temp_data.iloc[base_idx][col]
-                
-                # 성장률을 적용하여 예측
-                new_value = base_value * (1 + avg_growth_rate)
-                predicted_values.append(new_value)
-                
-                # 예측된 값을 temp_data에 추가하여 다음 예측에 사용
-                new_row = pd.DataFrame({col: [new_value]})
-                temp_data = pd.concat([temp_data, new_row], ignore_index=True)
-
-            future_predictions[col] = predicted_values
-
+        df['구분'] = '실적'
+        
+        # --- 미래 예측 부분 대신 빈 DataFrame 생성 ---
         last_year = int(df['날짜'].iloc[-1])
         last_quarter = int(df['분기'].iloc[-1].replace('분기', ''))
         
         future_quarters, future_dates = [], []
         current_year, current_quarter = last_year, last_quarter
-        for _ in range(future_steps):
+        for _ in range(4): # 4개 분기
             current_quarter += 1
             if current_quarter > 4:
                 current_quarter = 1
@@ -273,24 +237,22 @@ def analyze_company(company_name, corp_code, start_year, end_year):
             future_quarters.append(f"{current_quarter}분기")
             future_dates.append(f"{current_year}")
 
-        forecast_df = pd.DataFrame(future_predictions)
-        forecast_df['기업명'] = company_name
-        forecast_df['날짜'] = future_dates
-        forecast_df['분기'] = future_quarters
-        forecast_df['구분'] = '예측'
-
-        # --- 예측 데이터에 대한 지표 계산 ---
-        forecast_df['수익성 상태'] = forecast_df['당기순이익'].apply(lambda x: '흑자' if x > 0 else '적자')
-        forecast_df['영업이익률'] = forecast_df.apply(lambda row: (row['영업이익'] / row['매출액']) * 100 if row['매출액'] != 0 else 0, axis=1)
-        forecast_df['순이익률'] = forecast_df.apply(lambda row: (row['당기순이익'] / row['매출액']) * 100 if row['매출액'] != 0 else 0, axis=1)
-        forecast_df['ROA'] = forecast_df.apply(lambda row: (row['당기순이익'] / row['자산총계']) * 100 if row['자산총계'] != 0 else 0, axis=1)
-        forecast_df['ROE'] = forecast_df.apply(lambda row: (row['당기순이익'] / row['자본총계']) * 100 if row['자본총계'] != 0 else 0, axis=1)
-        forecast_df['영업비용'] = forecast_df['매출액'] - forecast_df['영업이익']
-        forecast_df['영업비용률'] = forecast_df.apply(lambda row: (row['영업비용'] / row['매출액']) * 100 if row['매출액'] != 0 else 0, axis=1)
+        # 모든 예측값을 NaN으로 채운 빈 DataFrame 생성
+        forecast_df = pd.DataFrame({
+            '기업명': [company_name] * 4,
+            '날짜': future_dates,
+            '분기': future_quarters,
+            '구분': ['예측'] * 4,
+            '업종코드': [induty_code] * 4
+        })
         
-        df['구분'] = '실적'
+        # 예측 관련 모든 숫자 컬럼을 NaN으로 채움
+        columns_to_fill = list(set(df.columns) - {'기업명', '날짜', '분기', '구분', '업종코드'})
+        for col in columns_to_fill:
+             forecast_df[col] = np.nan
+        
         combined_df = pd.concat([df, forecast_df], ignore_index=True)
-        print(f"--- {company_name}: 미래 재무 데이터 예측 완료 ---")
+        print(f"--- {company_name}: 미래 예측 데이터 공간 생성 완료 ---")
         return combined_df
 
     except Exception as e:
@@ -325,9 +287,9 @@ if __name__ == "__main__":
 
         if all_results:
             final_df = pd.concat(all_results, ignore_index=True)
-            final_df['매출액_성장률'] = final_df.groupby('기업명')['매출액'].pct_change(periods=4) * 100
-            final_df['영업이익_성장률'] = final_df.groupby('기업명')['영업이익'].pct_change(periods=4) * 100
-            final_df['당기순이익_성장률'] = final_df.groupby('기업명')['당기순이익'].pct_change(periods=4) * 100
+            final_df.loc[final_df['구분'] == '실적', '매출액_성장률'] = final_df[final_df['구분'] == '실적'].groupby('기업명')['매출액'].pct_change(periods=4) * 100 
+            final_df.loc[final_df['구분'] == '실적', '영업이익_성장률'] = final_df[final_df['구분'] == '실적'].groupby('기업명')['영업이익'].pct_change(periods=4) * 100 
+            final_df.loc[final_df['구분'] == '실적', '당기순이익_성장률'] = final_df[final_df['구분'] == '실적'].groupby('기업명')['당기순이익'].pct_change(periods=4) * 100 
 
             final_columns = [
                 '기업명', '날짜', '분기', '구분', '업종코드', '자산총계', '부채총계', '자본총계', 
