@@ -29,7 +29,7 @@ def get_corp_codes(key):
     """
     # 1. 파일이 이미 존재하는지 확인
     if os.path.exists('corpcode.xml'):
-        print("✅ 'corpcode.xml' 파일이 이미 존재합니다. 다운로드를 건너뜁니다.")
+        print("'corpcode.xml' 파일이 이미 존재합니다. 다운로드를 건너뜁니다.")
         return True
 
     # 2. 파일이 없으면 다운로드 진행
