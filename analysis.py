@@ -1,7 +1,8 @@
 import requests
 import pandas as pd
-import json
 import numpy as np
+import zipfile
+import io
 
 # ===================================================================
 # 여기에 DART API 키를 입력해주세요.
@@ -24,13 +25,71 @@ ACCOUNTS_TO_EXTRACT = [
     '매출액', '영업이익', '당기순이익'
 ]
 
+def get_corp_codes(key):
+    """
+    DART에서 제공하는 전체 회사 고유번호를 다운로드하여 corpcode.xml로 저장합니다.
+    """
+    print("DART 전체 회사 고유번호를 다운로드합니다...")
+    url = f'https://opendart.fss.or.kr/api/corpCode.xml?crtfc_key={key}'
+    response = None
+    try:
+        response = requests.get(url)
+        response.raise_for_status()  # 요청이 성공적이지 않으면 예외 발생
+
+        # ZIP 파일이므로 in-memory에서 처리
+        with zipfile.ZipFile(io.BytesIO(response.content)) as z:
+            # ZIP 파일 내의 CORPCODE.xml 파일 읽기 (대문자로 명시)
+            with z.open('CORPCODE.xml') as corp_code_file:
+                # 파일 내용을 읽어서 UTF-8로 디코딩
+                xml_content = corp_code_file.read().decode('utf-8')
+
+                # corpcode.xml 파일로 저장
+                with open('corpcode.xml', 'w', encoding='utf-8') as f:
+                    f.write(xml_content)
+                
+                print("corpcode.xml 파일이 성공적으로 저장되었습니다.")
+                return True
+
+    except requests.exceptions.RequestException as e:
+        print(f"HTTP 요청 중 오류가 발생했습니다: {e}")
+        return False
+    except zipfile.BadZipFile:
+        print("다운로드한 파일이 유효한 ZIP 파일이 아닙니다. API 키가 유효한지 확인해보세요.")
+        if response:
+            print("서버 응답 내용 (앞 500자):")
+            print(response.content[:500].decode('utf-8', errors='ignore'))
+        return False
+    except Exception as e:
+        print(f"ZIP 파일 처리 중 오류가 발생했습니다: {e}")
+        if response:
+            print("서버 응답 내용 (앞 500자):")
+            print(response.content[:500].decode('utf-8', errors='ignore'))
+        return False
+
 def analyze_company(company_name, corp_code, start_year, end_year):
     """
     지정된 회사의 재무 데이터를 분석하고 예측하여 DataFrame을 반환하는 함수
     """
     print(f"\n{'='*50}")
     print(f"{start_year}년부터 {end_year}년까지 {company_name}의 재무 정보 분석을 시작합니다.")
-    print(f"{'='*50}\n")
+    print(f"{'{'}={'='*50}\n")
+
+    # --- 1. 회사 개황 정보 조회 (업종 코드 포함) ---
+    induty_code = None
+    try:
+        print(f"--- {company_name}: 회사 개황 정보 조회 시작 ---")
+        company_url = f'https://opendart.fss.or.kr/api/company.json?crtfc_key={api_key}&corp_code={corp_code}'
+        response = requests.get(company_url)
+        response.raise_for_status()
+        company_data = response.json()
+        if company_data['status'] == '000':
+            induty_code = company_data.get('induty_code')
+            print(f"  -> 업종 코드: {induty_code} (회사명: {company_data.get('corp_name')})")
+        else:
+            print(f"  -> 회사 개황 API 오류: {company_data['message']}")
+    except Exception as e:
+        print(f"  -> 회사 개황 정보 조회 중 오류 발생: {e}")
+    print(f"--- {company_name}: 회사 개황 정보 조회 완료 ---\n")
 
     all_financial_data = []
 
@@ -41,7 +100,8 @@ def analyze_company(company_name, corp_code, start_year, end_year):
 
             for quarter, report_code in report_codes.items():
                 print(f"  {year}년 {quarter} 보고서 데이터를 조회 중...")
-                url = (f'https://opendart.fss.or.kr/api/fnlttMultiAcnt.json?'
+                url = (
+                       f'https://opendart.fss.or.kr/api/fnlttMultiAcnt.json?'
                        f'crtfc_key={api_key}&corp_code={corp_code}'
                        f'&bsns_year={year}&reprt_code={report_code}')
                 
@@ -55,7 +115,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
                     print(f"  -> API 오류: {data['message']}")
                     continue
 
-                extracted_info = {'기업명': company_name, '날짜': f'{year}', '분기': f'{quarter}'}
+                extracted_info = {'기업명': company_name, '날짜': f'{year}', '분기': f'{quarter}', '업종코드': induty_code}
                 for item in data['list']:
                     if item['fs_div'] == 'CFS' and item['account_nm'] in ACCOUNTS_TO_EXTRACT:
                         extracted_info[item['account_nm']] = item['thstrm_amount']
@@ -160,6 +220,9 @@ def analyze_company(company_name, corp_code, start_year, end_year):
 # 메인 실행 로직
 # ===================================================================
 if __name__ == "__main__":
+    # DART 고유번호 파일 다운로드
+    get_corp_codes(api_key)
+
     all_results = []
     for name, code in companies_to_analyze:
         result_df = analyze_company(name, code, start_year, end_year)
@@ -177,7 +240,7 @@ if __name__ == "__main__":
 
         # --- 컬럼 순서 정리 및 파일 저장 ---
         final_columns = [
-            '기업명', '날짜', '분기', '구분', '자산총계', '부채총계', '자본총계', 
+            '기업명', '날짜', '분기', '구분', '업종코드', '자산총계', '부채총계', '자본총계', 
             '매출액', '영업이익', '영업비용', '당기순이익', '수익성 상태', 
             '매출액_성장률', '영업이익_성장률', '당기순이익_성장률', '영업이익률', '순이익률', '영업비용률', 
             'ROA', 'ROE'
@@ -190,6 +253,6 @@ if __name__ == "__main__":
 
         print(f"\n\n{'='*50}")
         print(f"모든 분석 및 예측 완료! 결과가 '{output_filename}' 파일로 저장되었습니다.")
-        print(f"{'='*50}")
+        print(f"{'{'}={'='*50}")
     else:
         print("\n\n분석할 데이터가 없거나 오류가 발생하여 파일을 생성하지 않았습니다.")
