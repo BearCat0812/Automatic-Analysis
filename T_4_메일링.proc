@@ -1,4 +1,4 @@
-<Process id="a3170eba-3e5b-431a-af62-776aa16eb567" type="task" workType="foreground" name="T_4_메일링" version="1.0" designerVersion="3.1.125.00701" readonly="false" isValid="true" DesignedBy="Designer" Template="" StepCount="4" Orientation="horizontal">
+<Process id="8a92b6e8-9af6-4015-97db-599296a677b4" type="task" workType="foreground" name="T_4_메일링" version="1.0" designerVersion="3.1.125.00701" readonly="false" isValid="true" DesignedBy="Designer" Template="" StepCount="4" Orientation="horizontal">
   <Properties>
     <Property key="Description" controlType="PropertyItemTextEditorView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
     <Property key="onBefore" controlType="PropertyItemEventHandlerView" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" enabled="True" />
@@ -12,8 +12,8 @@
     <Property key="CreatedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
     <Property key="LastModifiedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="2025-08-19 16:56:02" />
     <Property key="LastModifiedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="True" encrypted="False" isChanged="N" value="" />
-    <Property key="LastPublishedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
-    <Property key="LastPublishedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />
+    <Property key="LastPublishedDate" controlType="String" valueType="System.String" formatType="String_DateTime" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" />
+    <Property key="LastPublishedBy" controlType="String" valueType="System.String" formatType="String" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" />
   </Properties>
   <LinkItems />
   <Variables>
@@ -75,7 +75,7 @@
         <Property type="Net" key="Mail_Port" controlType="Int32" valueType="System.Int32" formatType="Integer" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="25" />
         <Property type="Net" key="Mail_UseSSL" controlType="Boolean" valueType="System.Boolean" formatType="Boolean" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="True" />
         <Property type="Net" key="Mail_ID" controlType="String" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.id" />
-        <Property type="Net" key="Mail_Password" controlType="PropertyItemPasswordView" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="True" id="e88bf7d9-4052-4263-a8bb-d726ebe23d76" isChanged="Y" encryptedFrom="" value="Wkd3jrIBrOer1I1bzkq4wRioWXMLU2Pi1FCSXg2H5C0=" />
+        <Property type="Net" key="Mail_Password" controlType="PropertyItemPasswordView" valueType="System.String" formatType="String" required="True" visible="True" readonly="False" encrypted="True" id="ff64187b-03d8-40ae-9e9a-339509f145bf" isChanged="Y" encryptedFrom="" value="Wkd3jrIBrOer1I1bzkq4wRioWXMLU2Pi1FCSXg2H5C0=" />
         <Property type="Net" key="Mail_Sender" controlType="String" valueType="System.String" formatType="String_Email" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.sender" />
         <Property type="Net" key="Mail_Receivers" controlType="String" valueType="System.String" formatType="String_Email" required="True" visible="True" readonly="False" encrypted="False" isChanged="N" value="this.receivers" />
         <Property type="Net" key="Mail_CCs" controlType="String" valueType="System.String" formatType="String_Email" required="False" visible="True" readonly="False" encrypted="False" isChanged="N" value="" />

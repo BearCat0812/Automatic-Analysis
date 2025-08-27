@@ -1,22 +1,22 @@
-<Project id="37addf2e-ad06-425b-95d2-c638e41e8d1a" namespace="" name="Automatic_Analysis" category="project" workType="foreground" version="1.00" lastPublishedDate="" lastPublishedBy="" createdDate="2025-08-18 15:29:08" createdBy="" lastPublishedServer="" latestProcess="P_Automatic_Analysis" designerVersion="3.1.125.00701" DesignedBy="">
+<Project id="64af33ab-91b9-4457-a78f-c6d452b0d4b5" namespace="" name="Automatic_Analysis" category="project" workType="foreground" version="1.00" lastPublishedDate="" lastPublishedBy="" createdDate="2025-08-18 15:29:08" createdBy="" lastPublishedServer="" latestProcess="P_Automatic_Analysis" designerVersion="3.1.125.00701" DesignedBy="">
   <SharedTask isExpended="false" />
   <NormalTask isExpended="true">
-    <LinkItem id="d11941ae-c77a-4467-9f83-e8d51805a4be" category="NormalTask" isChanged="Y" desc="" stepCount="9" name="T_1_데이터_수집">
+    <LinkItem id="70204bce-0ab1-4fba-b301-aaccfc8d39cd" category="NormalTask" isChanged="Y" desc="" stepCount="9" name="T_1_데이터_수집">
       <Properties />
     </LinkItem>
-    <LinkItem id="e300e850-dc13-4a42-862b-a4a6bd614e16" category="NormalTask" isChanged="Y" desc="" stepCount="16" name="T_2_데이터_가공">
+    <LinkItem id="a3b24c3c-040c-4e96-8a6f-982534afe863" category="NormalTask" isChanged="Y" desc="" stepCount="19" name="T_2_데이터_가공">
       <Properties />
     </LinkItem>
-    <LinkItem id="2813bdbd-688d-4680-a078-271067bafd68" category="NormalTask" isChanged="Y" desc="" stepCount="17" name="T_3_시각화">
+    <LinkItem id="1ef12143-8738-4a20-b78f-851548397f8a" category="NormalTask" isChanged="Y" desc="" stepCount="83" name="T_3_시각화">
       <Properties />
     </LinkItem>
-    <LinkItem id="a3170eba-3e5b-431a-af62-776aa16eb567" category="NormalTask" isChanged="Y" desc="" stepCount="4" name="T_4_메일링">
+    <LinkItem id="8a92b6e8-9af6-4015-97db-599296a677b4" category="NormalTask" isChanged="Y" desc="" stepCount="4" name="T_4_메일링">
       <Properties />
     </LinkItem>
   </NormalTask>
   <Event isExpended="false" />
   <Process isExpended="true">
-    <LinkItem id="c694acd7-5769-409c-88a3-558ad68664ff" category="Process" isChanged="Y" desc="default process" stepCount="4" name="P_Automatic_Analysis">
+    <LinkItem id="2cc63046-6ac4-4bfe-b1d8-d587a5eae5f5" category="Process" isChanged="Y" desc="default process" stepCount="4" name="P_Automatic_Analysis">
       <Properties />
     </LinkItem>
   </Process>
