@@ -7,7 +7,7 @@
     <LinkItem id="a3b24c3c-040c-4e96-8a6f-982534afe863" category="NormalTask" isChanged="Y" desc="" stepCount="19" name="T_2_데이터_가공">
       <Properties />
     </LinkItem>
-    <LinkItem id="1ef12143-8738-4a20-b78f-851548397f8a" category="NormalTask" isChanged="Y" desc="" stepCount="83" name="T_3_시각화">
+    <LinkItem id="1ef12143-8738-4a20-b78f-851548397f8a" category="NormalTask" isChanged="Y" desc="" stepCount="97" name="T_3_시각화">
       <Properties />
     </LinkItem>
     <LinkItem id="8a92b6e8-9af6-4015-97db-599296a677b4" category="NormalTask" isChanged="Y" desc="" stepCount="4" name="T_4_메일링">

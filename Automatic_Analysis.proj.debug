@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <DebugData>
   <WatchList />
-  <WorkProcDebugList />
+  <WorkProcDebugList>
+    <WorkProcDebug id="1ef12143-8738-4a20-b78f-851548397f8a" name="T_3_시각화">
+      <BreakPoints />
+      <FavoriteVariables />
+      <RunInterval>
+        <StartPoint />
+        <EndPoint />
+      </RunInterval>
+    </WorkProcDebug>
+  </WorkProcDebugList>
 </DebugData>

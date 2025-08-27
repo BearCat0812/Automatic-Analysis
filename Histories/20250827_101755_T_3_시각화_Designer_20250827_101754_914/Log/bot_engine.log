@@ -1,0 +1,661 @@
+﻿2025-08-27 10:17:33,208 [T1] INFO  EngineStarter
+BOT Engine Start - v3.1.125.00701 at 2025-08-27 오전 10:17:33
+EngineID: D_20250827_101732_311
+PID : 11096
+PPID: 480
+Working Directory: C:\Users\GVTI1C18\AppData\Roaming\Brity RPA Designer
+
+2025-08-27 10:17:33,229 [T1] INFO  EngineStarter
+System Language: ko-KR
+Resolution: 1920 x 1080
+
+2025-08-27 10:17:33,516 [T1] INFO  Config
+Initialize Config
+
+2025-08-27 10:17:33,570 [T1] DEBUG Config
+Config Loaded
+
+2025-08-27 10:17:33,571 [T1] DEBUG Config
+Backup config file.
+
+2025-08-27 10:17:33,582 [T1] INFO  Config
+Orchestrator Service => https://bwrpa.samsungsds.com:8777
+
+2025-08-27 10:17:33,587 [T1] INFO  Config
+Initialize Resource Config
+
+2025-08-27 10:17:33,622 [T1] DEBUG Config
+Refresh Language Information
+
+2025-08-27 10:17:33,701 [T1] INFO  Config
+All Config Initialized.
+
+2025-08-27 10:17:33,709 [T1] DEBUG KeyManager
+Initialize KeyManager
+
+2025-08-27 10:17:33,711 [T1] DEBUG KeyManager
+Load device unique id.
+
+2025-08-27 10:17:33,719 [T1] DEBUG KeyManager
+Device ID is initialized.
+
+2025-08-27 10:17:33,724 [T1] INFO  Config
+Activated License Type : StandAloneDesigner
+
+2025-08-27 10:17:33,798 [T4] DEBUG JobService
+Connect to agent service
+
+2025-08-27 10:17:33,830 [T4] DEBUG JobService
+JobService URL : net.tcp://127.0.0.1:59001/rpa/agent
+
+2025-08-27 10:17:33,830 [T4] DEBUG JobService
+Open connection
+
+2025-08-27 10:17:33,835 [T1] DEBUG ApplicationInitializer
+InitMode: Thread
+
+2025-08-27 10:17:33,847 [T4] DEBUG JobService
+Register engine to agent
+
+2025-08-27 10:17:33,848 [T1] INFO  LibraryManager
+Load Libraries - Started
+
+2025-08-27 10:17:33,861 [T4] DEBUG JobService
+Engine is connected to agent service.
+
+2025-08-27 10:17:33,861 [T4] DEBUG JobService
+Owner Process PID: 480
+
+2025-08-27 10:17:33,863 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Chrome
+
+2025-08-27 10:17:33,864 [T4] INFO  JobService
+Start monitoring owner process is terminated.
+
+2025-08-27 10:17:34,106 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Desktop
+
+2025-08-27 10:17:34,310 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Excel
+
+2025-08-27 10:17:34,499 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Flow
+
+2025-08-27 10:17:34,631 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.IE
+
+2025-08-27 10:17:34,737 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.ImageConverter
+
+2025-08-27 10:17:34,803 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.ImageRecognition
+
+2025-08-27 10:17:35,020 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.MicrosoftOCR
+
+2025-08-27 10:17:35,089 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Net
+
+2025-08-27 10:17:35,182 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Orchestra
+
+2025-08-27 10:17:35,275 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.ProcessFlow
+
+2025-08-27 10:17:35,383 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.SAP
+
+2025-08-27 10:17:35,479 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Web
+
+2025-08-27 10:17:35,605 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Win
+
+2025-08-27 10:17:35,753 [T1] INFO  ScreenCapture
+Default Screen Capture Bounds: 0,0,1920,1080
+
+2025-08-27 10:17:35,790 [T1] DEBUG AddInLoader
+Load Assembly : BrityRPA.AddIn.NativeApp
+
+2025-08-27 10:17:35,914 [T1] DEBUG AddInLoader
+Load Assembly : BrityWorks.AddIn.Outlook
+
+2025-08-27 10:17:36,001 [T1] DEBUG AddInLoader
+Load Assembly : BrityWorks.AddIn.Pdf
+
+2025-08-27 10:17:36,099 [T1] DEBUG LibraryManager
+Load Library - Chrome
+
+2025-08-27 10:17:36,114 [T1] DEBUG LibraryManager
+Load Library - Desktop
+
+2025-08-27 10:17:36,129 [T1] DEBUG LibraryManager
+Load Library - Excel
+
+2025-08-27 10:17:36,145 [T1] DEBUG LibraryManager
+Load Library - Flow
+
+2025-08-27 10:17:36,160 [T1] DEBUG LibraryManager
+Load Library - IE
+
+2025-08-27 10:17:36,176 [T1] DEBUG LibraryManager
+Load Library - ImageConverter
+
+2025-08-27 10:17:36,192 [T1] DEBUG LibraryManager
+Load Library - ImageRecognition
+
+2025-08-27 10:17:36,207 [T1] DEBUG LibraryManager
+Load Library - MicrosoftOCR
+
+2025-08-27 10:17:36,223 [T1] DEBUG LibraryManager
+Load Library - NativeApp
+
+2025-08-27 10:17:36,239 [T1] DEBUG LibraryManager
+Load Library - Net
+
+2025-08-27 10:17:36,255 [T1] DEBUG LibraryManager
+Load Library - Orchestra
+
+2025-08-27 10:17:36,271 [T1] DEBUG LibraryManager
+Load Library - Outlook
+
+2025-08-27 10:17:36,287 [T1] DEBUG LibraryManager
+Load Library - Pdf
+
+2025-08-27 10:17:36,303 [T1] DEBUG LibraryManager
+Load Library - SAP
+
+2025-08-27 10:17:36,318 [T1] DEBUG LibraryManager
+Load Library - Web
+
+2025-08-27 10:17:36,333 [T1] DEBUG LibraryManager
+Load Library - Win
+
+2025-08-27 10:17:36,349 [T1] DEBUG LibraryManager
+Load Library - WorkFlow
+
+2025-08-27 10:17:36,354 [T1] DEBUG LibraryManager
+Load built-in script libraries
+
+2025-08-27 10:17:36,648 [T1] INFO  LibraryManager
+Load Libraries - Completed.
+
+2025-08-27 10:17:36,664 [T1] INFO  App
+Launch Arguments: Total: 6 |  -eid D_20250827_101732_311 -runtype ProcRunner -ppid 480
+
+2025-08-27 10:17:36,664 [T1] DEBUG Config
+Refresh Language Information
+
+2025-08-27 10:17:36,665 [T1] DEBUG LibraryManager
+LibraryManager Initialized.
+
+2025-08-27 10:17:55,152 [T8] INFO  JobService
+Start Job: T_3_시각화 (Foreground)
+{
+  "JobType": 1,
+  "State": 0,
+  "IsRunning": false,
+  "ResultMessage": null,
+  "StartTime": "2025-08-27 10:17:55",
+  "EndTime": null,
+  "JobId": "Designer_20250827_101754_914",
+  "UserAuthentication": null,
+  "ProcessPath": "C:\\Users\\GVTI1C18\\Desktop\\Automatic-Analysis\\T_3_시각화.proc",
+  "ProcessId": "1ef12143-8738-4a20-b78f-851548397f8a",
+  "ProcessVer": "1.0",
+  "ProcessArgs": "S1488dab3bd2a4586837d8f69a7c5ef3c;;False",
+  "RequesterType": 3,
+  "RequesterId": "designer",
+  "RequesterPID": 480,
+  "OptionsJsonString": null,
+  "TimeoutSec": 0,
+  "EngineID": "D_20250827_101732_311",
+  "EnginePID": 0,
+  "EngineRecommededVersion": "",
+  "JobWorkDir": "C:\\Users\\GVTI1C18\\Desktop\\Automatic-Analysis\\Histories\\20250827_101755_T_3_시각화_Designer_20250827_101754_914",
+  "JobLogDir": "C:\\Users\\GVTI1C18\\Desktop\\Automatic-Analysis\\Histories\\20250827_101755_T_3_시각화_Designer_20250827_101754_914\\Log",
+  "JobScreenshotDir": "C:\\Users\\GVTI1C18\\Desktop\\Automatic-Analysis\\Histories\\20250827_101755_T_3_시각화_Designer_20250827_101754_914\\Log\\Screenshot"
+}
+
+2025-08-27 10:17:55,312 [T6] DEBUG JobService
+Waiting library loading...
+
+2025-08-27 10:17:55,315 [T6] DEBUG Config
+Reload User Settings
+
+2025-08-27 10:17:55,319 [T6] INFO  JobService
+Config Loading Completed.
+
+2025-08-27 10:17:55,319 [T6] DEBUG JobService
+Config Loading Time: 6 ms.
+
+2025-08-27 10:17:55,325 [T6] DEBUG JobService
+Check Shared Token
+
+2025-08-27 10:17:55,328 [T6] DEBUG TokenManager
+Load connection token
+
+2025-08-27 10:17:55,331 [T6] DEBUG TokenManager
+Clear Connection Token - No Shared Token
+
+2025-08-27 10:17:55,339 [T6] DEBUG ServerInformationClient
+get server features for engine bot from config.
+
+2025-08-27 10:17:55,341 [T6] INFO  Config
+Try to load server features from config.
+
+2025-08-27 10:17:55,342 [T6] INFO  TokenManager
+SecurityType : v2
+
+2025-08-27 10:17:55,344 [T6] INFO  JobService
+Shared Token - No Token
+
+2025-08-27 10:17:55,353 [T6] INFO  JobManager
+Create JobManager instance for job T_3_시각화(Designer_20250827_101754_914)
+
+2025-08-27 10:17:55,363 [T6] INFO  JobRequest
+Job ID : Designer_20250827_101754_914
+Project Path  : C:\Users\GVTI1C18\Desktop\Automatic-Analysis\Automatic_Analysis.proj
+Process Name  : T_3_시각화
+Engine Mode   : Designer
+Requester Type: Designer
+Requester PID : 480
+
+2025-08-27 10:17:55,365 [T7] INFO  JobRequest
+Start Callback Sender
+
+2025-08-27 10:17:55,365 [T7] DEBUG JobRequest
+Step Callback Interval: 500
+
+2025-08-27 10:17:55,420 [T6] DEBUG ProjectManager
+Set Project Information
+
+2025-08-27 10:17:55,452 [T6] INFO  PlayOptionManager
+PlayOption
+- Step Interval : 1
+- Disable DrawBounds : False
+- Invoke First : False
+- Allow Upload of DumpScreen results : False
+
+2025-08-27 10:17:55,454 [T6] INFO  JobRunner
+Initialize Script Engine
+
+2025-08-27 10:17:55,473 [T11-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: Initializing
+##############################################################
+
+
+2025-08-27 10:17:55,494 [T7] DEBUG JobRequest
+Callback - State: Initializing
+
+
+2025-08-27 10:17:56,566 [T11-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: Ready
+##############################################################
+
+
+2025-08-27 10:17:56,576 [T7] DEBUG JobRequest
+Callback - State: Ready
+
+
+2025-08-27 10:17:56,581 [T6] INFO  JobRunnerHook
+HotKey Hook Started
+
+2025-08-27 10:17:56,582 [T6] INFO  JobRequest
+##############################################################
+### STATE: Starting
+##############################################################
+
+
+2025-08-27 10:17:56,584 [T11-ScriptEngine] INFO  JobRunner
+RunProcess start
+
+2025-08-27 10:17:56,586 [T11-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: Running
+##############################################################
+
+
+2025-08-27 10:17:56,586 [T11-ScriptEngine] INFO  JobRequest
+Last job life cycle state: Running
+
+2025-08-27 10:17:56,591 [T7] DEBUG JobRequest
+Callback - State: Starting
+
+
+2025-08-27 10:17:56,607 [T7] DEBUG JobRequest
+Callback - State: Running
+
+
+2025-08-27 10:17:57,726 [T11-ScriptEngine] DEBUG ScreenCapture
+DirectX Screen Capture Initialized.
+
+2025-08-27 10:17:57,750 [T11-ScriptEngine] DEBUG JobRunner
+DirectX ScreenCapture Checked.
+
+2025-08-27 10:17:57,853 [T11-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: StartProcess - T_3_시각화
+##############################################################
+1ef12143-8738-4a20-b78f-851548397f8a
+T_3_시각화
+
+
+2025-08-27 10:17:57,918 [T11-ScriptEngine] INFO  JobRequest
+**************************************************************
+*** TASK: T_3_시각화
+**************************************************************
+ - STEP 1: S1488dab3bd2a4586837d8f69a7c5ef3c (50/83) - (1/32)
+ - [50] Click
+
+
+2025-08-27 10:17:58,229 [T6] DEBUG UIAEventHandler
+Start UIA event handler
+
+2025-08-27 10:17:58,434 [T6] DEBUG UIAEventHandler
+UI Structure Changed Count: 0
+
+2025-08-27 10:17:58,434 [T6] DEBUG UIAEventHandler
+Waiting additional time 104 msec for the screen structure is changing. Requested interval: 200 msec.
+
+2025-08-27 10:17:58,471 [T6] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:17:58,632 [T6] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:17:58,787 [T6] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:17:58,922 [T11-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '기업명'
+ - value: ''
+
+2025-08-27 10:17:59,402 [T11-ScriptEngine] INFO  JobRequest
+ - STEP 2: S2a068390532449a7ac529868500fa4d1 (52/83) - (2/32)
+ - [52] Click
+
+
+2025-08-27 10:17:59,438 [T6] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:17:59,439 [T6] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:17:59,539 [T6] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:17:59,595 [T11-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '구분'
+ - value: ''
+
+2025-08-27 10:18:00,005 [T11-ScriptEngine] INFO  JobRequest
+ - STEP 3: S330e2baba8fd4098b829868f27497fcd (53/83) - (3/32)
+ - [53] MouseScroll
+
+
+2025-08-27 10:18:00,100 [T6] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:18:00,101 [T6] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:18:00,198 [T6] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:18:00,258 [T11-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '위치'
+ - value: ''
+
+2025-08-27 10:18:01,790 [T11-ScriptEngine] INFO  JobRequest
+ - STEP 4: S9d132a22d6e04476a966f340d3312e1d (54/83) - (4/32)
+ - [54] Click
+
+
+2025-08-27 10:18:01,836 [T6] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:18:01,837 [T6] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:18:01,937 [T6] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:18:01,995 [T11-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '영업비용률'
+ - value: ''
+
+2025-08-27 10:18:02,419 [T11-ScriptEngine] INFO  JobRequest
+ - STEP 5: S1f991b05444b4b88b43fe1dc2e530884 (55/83) - (5/32)
+ - [55] Click
+
+
+2025-08-27 10:18:02,517 [T6] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:18:02,518 [T6] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:18:02,609 [T6] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:18:02,668 [T11-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '영업이익률'
+ - value: ''
+
+2025-08-27 10:18:03,100 [T11-ScriptEngine] INFO  JobRequest
+ - STEP 6: Sd1804f6066344779971a6ab26db601ee (56/83) - (6/32)
+ - [56] Click
+
+
+2025-08-27 10:18:03,237 [T6] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:18:03,238 [T6] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:18:03,322 [T6] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:18:03,382 [T11-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '기업명'
+ - value: ''
+
+2025-08-27 10:18:03,818 [T11-ScriptEngine] INFO  JobRequest
+ - STEP 7: Sbd571a4c34494e83aa47758e53cfde1a (57/83) - (7/32)
+ - [57] Click
+
+
+2025-08-27 10:18:04,077 [T6] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:18:04,086 [T6] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:18:04,174 [T6] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:18:04,224 [T11-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '범례 필드(계열)로 이동'
+ - value: ''
+
+2025-08-27 10:18:04,627 [T11-ScriptEngine] INFO  JobRequest
+ - STEP 8: S8824fb8e7ea04957a4b36b9f7e93b1c8 (58/83) - (8/32)
+ - [58] Click
+
+
+2025-08-27 10:18:04,801 [T5] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:18:04,802 [T5] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:18:04,905 [T5] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:18:04,958 [T11-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: ''
+ - value: ''
+
+2025-08-27 10:18:05,389 [T11-ScriptEngine] INFO  JobRequest
+ - STEP 9: Seb7576f0d0124585b90441e0245f8268 (59/83) - (9/32)
+ - [59] SetCheckState
+
+
+2025-08-27 10:18:05,438 [T6] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:18:05,439 [T6] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:18:08,971 [T6] INFO  WinFinder
+Finding Object In App... Try: 2, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:18:08,973 [T6] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:18:12,093 [T6] INFO  WinFinder
+Finding Object In App... Try: 3, IsLastTry: True. AppCount: 1
+
+2025-08-27 10:18:12,093 [T6] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:18:15,564 [T6] INFO  WinFinder
+Finding Object In App... Try: 4, IsLastTry: True. AppCount: 1
+
+2025-08-27 10:18:15,579 [T6] DEBUG WinElementTargetFinder
+## Object Find In App (name: 'Excel')
+
+2025-08-27 10:18:16,663 [T8] INFO  JobService
+Stop Job
+
+2025-08-27 10:18:16,666 [T8] INFO  JobRunner
+Stop Job Runner - Cause: LocalUser / Message: stop by user
+
+2025-08-27 10:18:16,666 [T8] INFO  JobRequest
+##############################################################
+### STATE: Stopping
+##############################################################
+stop by user
+
+
+2025-08-27 10:18:16,668 [T7] DEBUG JobRequest
+Callback - State: Stopping
+stop by user
+
+2025-08-27 10:18:17,137 [T11-ScriptEngine] DEBUG WinFinder
+UI Inspection Time: 11 seconds.
+
+2025-08-27 10:18:17,137 [T11-ScriptEngine] INFO  WinFinder
+Finding Result: NotFound
+
+2025-08-27 10:18:17,142 [T11-ScriptEngine] DEBUG JobRunner
+RunTask Interrupted. TASK: T_3_시각화 => Script execution interrupted by host
+
+2025-08-27 10:18:17,174 [T11-ScriptEngine] DEBUG JobManager
+Set Result State: Stopped
+
+2025-08-27 10:18:17,180 [T11-ScriptEngine] INFO  JobRunner
+Make report.
+
+2025-08-27 10:18:17,226 [T11-ScriptEngine] INFO  JobRunner
+Start to clean up resources.
+
+2025-08-27 10:18:17,228 [T6] DEBUG JobRunner
+Start timer for checking the job to be completed.
+
+2025-08-27 10:18:17,228 [T11-ScriptEngine] DEBUG JobRunner
+OnProcessCompleted
+
+2025-08-27 10:18:17,229 [T11-ScriptEngine] INFO  JobRunner
+Start to clean up resources.
+
+2025-08-27 10:18:17,230 [T11-ScriptEngine] DEBUG JobRunner
+Remove all Process Stack: 1
+
+2025-08-27 10:18:17,237 [T11-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: EndProcess - T_3_시각화
+##############################################################
+1ef12143-8738-4a20-b78f-851548397f8a
+T_3_시각화
+
+
+2025-08-27 10:18:17,240 [T11-ScriptEngine] DEBUG JobRunner
+Remove all libraries
+
+2025-08-27 10:18:17,249 [T11-ScriptEngine] DEBUG NetPlayer
+WebPlayer OnDispose
+
+2025-08-27 10:18:17,252 [T11-ScriptEngine] DEBUG WebPlayer
+WebPlayer OnDispose : Do Nothing
+
+2025-08-27 10:18:17,252 [T11-ScriptEngine] DEBUG UIAEventHandler
+Stop UIA event handler
+
+2025-08-27 10:18:17,253 [T11-ScriptEngine] DEBUG UIAEventHandler
+Stop UIA event handler
+
+2025-08-27 10:18:17,264 [T11-ScriptEngine] DEBUG UiaAppHelper
+WinHelper DisposeAppList Count: 0
+
+2025-08-27 10:18:17,264 [T11-ScriptEngine] INFO  JobRunner
+All Resources Clear
+
+2025-08-27 10:18:17,268 [T11-ScriptEngine] DEBUG JobRunner
+OnCompleted
+
+2025-08-27 10:18:17,269 [T11-ScriptEngine] DEBUG JobRunner
+SendJobResult: Stopped
+
+2025-08-27 10:18:17,269 [T11-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: Stopped
+##############################################################
+Process: T_3_시각화
+Step: SetCheckState (59/83)
+
+Stopped by User
+
+
+2025-08-27 10:18:17,269 [T11-ScriptEngine] INFO  JobRequest
+Last job life cycle state: Stopped
+
+2025-08-27 10:18:17,272 [T11-ScriptEngine] DEBUG JobDBManager
+Set last life-cycle state: Stopped - Process: T_3_시각화
+Step: SetCheckState (59/83)
+
+Stopped by User
+
+2025-08-27 10:18:17,299 [T11-ScriptEngine] INFO  JobRequest
+##############################################################
+### JOB COMPLETED
+##############################################################
+
+
+2025-08-27 10:18:17,304 [T7] DEBUG JobRequest
+Callback - State: Stopped
+Process: T_3_시각화
+Step: SetCheckState (59/83)
+
+Stopped by User
+
+2025-08-27 10:18:17,306 [T7] INFO  JobRequest
+Callback - EngineClosed
+
+2025-08-27 10:18:17,306 [T7] INFO  JobService
+Disconnect agent service
+
+2025-08-27 10:18:17,308 [T7] DEBUG JobRequest
+End of Callback Sender
+
