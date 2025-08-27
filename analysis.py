@@ -161,7 +161,7 @@ def analyze_company(company_name, corp_code, start_year, end_year):
     print(f"{start_year}년부터 {end_year}년까지 {company_name}의 재무 정보 분석을 시작합니다.")
     print(f"{'='*50}\n")
 
-    # --- 1. 회사 개황 정보 조회 (업종 코드 포함) ---
+    # --- 회사 개황 정보 조회 (업종 코드 포함) ---
     induty_code = None
     try:
         print(f"--- {company_name}: 회사 개황 정보 조회 시작 ---")
