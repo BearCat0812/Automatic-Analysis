@@ -1,0 +1,2414 @@
+﻿2025-08-27 10:41:14,276 [T1] INFO  EngineStarter
+BOT Engine Start - v3.1.125.00701 at 2025-08-27 오전 10:41:14
+EngineID: D_20250827_104113_423
+PID : 936
+PPID: 480
+Working Directory: C:\Users\GVTI1C18\AppData\Roaming\Brity RPA Designer
+
+2025-08-27 10:41:14,295 [T1] INFO  EngineStarter
+System Language: ko-KR
+Resolution: 1920 x 1080
+
+2025-08-27 10:41:14,664 [T1] INFO  Config
+Initialize Config
+
+2025-08-27 10:41:14,729 [T1] DEBUG Config
+Config Loaded
+
+2025-08-27 10:41:14,730 [T1] DEBUG Config
+Backup config file.
+
+2025-08-27 10:41:14,788 [T1] INFO  Config
+Orchestrator Service => https://bwrpa.samsungsds.com:8777
+
+2025-08-27 10:41:14,794 [T1] INFO  Config
+Initialize Resource Config
+
+2025-08-27 10:41:14,831 [T1] DEBUG Config
+Refresh Language Information
+
+2025-08-27 10:41:14,928 [T1] INFO  Config
+All Config Initialized.
+
+2025-08-27 10:41:14,935 [T1] DEBUG KeyManager
+Initialize KeyManager
+
+2025-08-27 10:41:14,938 [T1] DEBUG KeyManager
+Load device unique id.
+
+2025-08-27 10:41:14,945 [T1] DEBUG KeyManager
+Device ID is initialized.
+
+2025-08-27 10:41:14,949 [T1] INFO  Config
+Activated License Type : StandAloneDesigner
+
+2025-08-27 10:41:15,039 [T5] DEBUG JobService
+Connect to agent service
+
+2025-08-27 10:41:15,070 [T5] DEBUG JobService
+JobService URL : net.tcp://127.0.0.1:59001/rpa/agent
+
+2025-08-27 10:41:15,070 [T5] DEBUG JobService
+Open connection
+
+2025-08-27 10:41:15,077 [T1] DEBUG ApplicationInitializer
+InitMode: Thread
+
+2025-08-27 10:41:15,087 [T5] DEBUG JobService
+Register engine to agent
+
+2025-08-27 10:41:15,089 [T1] INFO  LibraryManager
+Load Libraries - Started
+
+2025-08-27 10:41:15,102 [T5] DEBUG JobService
+Engine is connected to agent service.
+
+2025-08-27 10:41:15,102 [T5] DEBUG JobService
+Owner Process PID: 480
+
+2025-08-27 10:41:15,103 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Chrome
+
+2025-08-27 10:41:15,105 [T5] INFO  JobService
+Start monitoring owner process is terminated.
+
+2025-08-27 10:41:15,334 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Desktop
+
+2025-08-27 10:41:15,533 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Excel
+
+2025-08-27 10:41:15,780 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Flow
+
+2025-08-27 10:41:15,912 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.IE
+
+2025-08-27 10:41:16,016 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.ImageConverter
+
+2025-08-27 10:41:16,079 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.ImageRecognition
+
+2025-08-27 10:41:16,299 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.MicrosoftOCR
+
+2025-08-27 10:41:16,365 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Net
+
+2025-08-27 10:41:16,461 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Orchestra
+
+2025-08-27 10:41:16,553 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.ProcessFlow
+
+2025-08-27 10:41:16,648 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.SAP
+
+2025-08-27 10:41:16,738 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Web
+
+2025-08-27 10:41:16,859 [T1] DEBUG AddInLoader
+Load Assembly : IPA.Lib.Win
+
+2025-08-27 10:41:17,004 [T1] INFO  ScreenCapture
+Default Screen Capture Bounds: 0,0,1920,1080
+
+2025-08-27 10:41:17,040 [T1] DEBUG AddInLoader
+Load Assembly : BrityRPA.AddIn.NativeApp
+
+2025-08-27 10:41:17,161 [T1] DEBUG AddInLoader
+Load Assembly : BrityWorks.AddIn.Outlook
+
+2025-08-27 10:41:17,238 [T1] DEBUG AddInLoader
+Load Assembly : BrityWorks.AddIn.Pdf
+
+2025-08-27 10:41:17,330 [T1] DEBUG LibraryManager
+Load Library - Chrome
+
+2025-08-27 10:41:17,346 [T1] DEBUG LibraryManager
+Load Library - Desktop
+
+2025-08-27 10:41:17,361 [T1] DEBUG LibraryManager
+Load Library - Excel
+
+2025-08-27 10:41:17,376 [T1] DEBUG LibraryManager
+Load Library - Flow
+
+2025-08-27 10:41:17,392 [T1] DEBUG LibraryManager
+Load Library - IE
+
+2025-08-27 10:41:17,408 [T1] DEBUG LibraryManager
+Load Library - ImageConverter
+
+2025-08-27 10:41:17,423 [T1] DEBUG LibraryManager
+Load Library - ImageRecognition
+
+2025-08-27 10:41:17,438 [T1] DEBUG LibraryManager
+Load Library - MicrosoftOCR
+
+2025-08-27 10:41:17,455 [T1] DEBUG LibraryManager
+Load Library - NativeApp
+
+2025-08-27 10:41:17,485 [T1] DEBUG LibraryManager
+Load Library - Net
+
+2025-08-27 10:41:17,501 [T1] DEBUG LibraryManager
+Load Library - Orchestra
+
+2025-08-27 10:41:17,516 [T1] DEBUG LibraryManager
+Load Library - Outlook
+
+2025-08-27 10:41:17,531 [T1] DEBUG LibraryManager
+Load Library - Pdf
+
+2025-08-27 10:41:17,546 [T1] DEBUG LibraryManager
+Load Library - SAP
+
+2025-08-27 10:41:17,562 [T1] DEBUG LibraryManager
+Load Library - Web
+
+2025-08-27 10:41:17,577 [T1] DEBUG LibraryManager
+Load Library - Win
+
+2025-08-27 10:41:17,593 [T1] DEBUG LibraryManager
+Load Library - WorkFlow
+
+2025-08-27 10:41:17,598 [T1] DEBUG LibraryManager
+Load built-in script libraries
+
+2025-08-27 10:41:17,903 [T1] INFO  LibraryManager
+Load Libraries - Completed.
+
+2025-08-27 10:41:17,918 [T1] INFO  App
+Launch Arguments: Total: 6 |  -eid D_20250827_104113_423 -runtype ProcRunner -ppid 480
+
+2025-08-27 10:41:17,919 [T1] DEBUG Config
+Refresh Language Information
+
+2025-08-27 10:41:17,919 [T1] DEBUG LibraryManager
+LibraryManager Initialized.
+
+2025-08-27 10:59:06,103 [T9] INFO  JobService
+Start Job: P_Automatic_Analysis (Foreground)
+{
+  "JobType": 1,
+  "State": 0,
+  "IsRunning": false,
+  "ResultMessage": null,
+  "StartTime": "2025-08-27 10:59:06",
+  "EndTime": null,
+  "JobId": "Designer_20250827_105905_824",
+  "UserAuthentication": null,
+  "ProcessPath": "C:\\Users\\GVTI1C18\\Desktop\\Automatic-Analysis\\P_Automatic_Analysis.proc",
+  "ProcessId": "2cc63046-6ac4-4bfe-b1d8-d587a5eae5f5",
+  "ProcessVer": "1.0",
+  "ProcessArgs": null,
+  "RequesterType": 3,
+  "RequesterId": "designer",
+  "RequesterPID": 480,
+  "OptionsJsonString": null,
+  "TimeoutSec": 0,
+  "EngineID": "D_20250827_104113_423",
+  "EnginePID": 0,
+  "EngineRecommededVersion": "",
+  "JobWorkDir": "C:\\Users\\GVTI1C18\\Desktop\\Automatic-Analysis\\Histories\\20250827_105906_P_Automatic_Analysis_Designer_20250827_105905_824",
+  "JobLogDir": "C:\\Users\\GVTI1C18\\Desktop\\Automatic-Analysis\\Histories\\20250827_105906_P_Automatic_Analysis_Designer_20250827_105905_824\\Log",
+  "JobScreenshotDir": "C:\\Users\\GVTI1C18\\Desktop\\Automatic-Analysis\\Histories\\20250827_105906_P_Automatic_Analysis_Designer_20250827_105905_824\\Log\\Screenshot"
+}
+
+2025-08-27 10:59:06,287 [T10] DEBUG JobService
+Waiting library loading...
+
+2025-08-27 10:59:06,290 [T10] DEBUG Config
+Reload User Settings
+
+2025-08-27 10:59:06,294 [T10] INFO  JobService
+Config Loading Completed.
+
+2025-08-27 10:59:06,294 [T10] DEBUG JobService
+Config Loading Time: 6 ms.
+
+2025-08-27 10:59:06,300 [T10] DEBUG JobService
+Check Shared Token
+
+2025-08-27 10:59:06,303 [T10] DEBUG TokenManager
+Load connection token
+
+2025-08-27 10:59:06,306 [T10] DEBUG TokenManager
+Clear Connection Token - No Shared Token
+
+2025-08-27 10:59:06,316 [T10] DEBUG ServerInformationClient
+get server features for engine bot from config.
+
+2025-08-27 10:59:06,318 [T10] INFO  Config
+Try to load server features from config.
+
+2025-08-27 10:59:06,325 [T10] INFO  TokenManager
+SecurityType : v2
+
+2025-08-27 10:59:06,331 [T10] INFO  JobService
+Shared Token - No Token
+
+2025-08-27 10:59:06,339 [T10] INFO  JobManager
+Create JobManager instance for job P_Automatic_Analysis(Designer_20250827_105905_824)
+
+2025-08-27 10:59:06,350 [T11] INFO  JobRequest
+Start Callback Sender
+
+2025-08-27 10:59:06,350 [T11] DEBUG JobRequest
+Step Callback Interval: 500
+
+2025-08-27 10:59:06,356 [T10] INFO  JobRequest
+Job ID : Designer_20250827_105905_824
+Project Path  : C:\Users\GVTI1C18\Desktop\Automatic-Analysis\Automatic_Analysis.proj
+Process Name  : P_Automatic_Analysis
+Engine Mode   : Designer
+Requester Type: Designer
+Requester PID : 480
+
+2025-08-27 10:59:06,424 [T10] DEBUG ProjectManager
+Set Project Information
+
+2025-08-27 10:59:06,541 [T10] INFO  PlayOptionManager
+PlayOption
+- Step Interval : 1
+- Disable DrawBounds : False
+- Invoke First : False
+- Allow Upload of DumpScreen results : False
+
+2025-08-27 10:59:06,543 [T10] INFO  JobRunner
+Initialize Script Engine
+
+2025-08-27 10:59:06,572 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: Initializing
+##############################################################
+
+
+2025-08-27 10:59:06,595 [T11] DEBUG JobRequest
+Callback - State: Initializing
+
+
+2025-08-27 10:59:07,844 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: Ready
+##############################################################
+
+
+2025-08-27 10:59:07,850 [T11] DEBUG JobRequest
+Callback - State: Ready
+
+
+2025-08-27 10:59:07,860 [T10] INFO  JobRunnerHook
+HotKey Hook Started
+
+2025-08-27 10:59:07,861 [T10] INFO  JobRequest
+##############################################################
+### STATE: Starting
+##############################################################
+
+
+2025-08-27 10:59:07,863 [T14-ScriptEngine] INFO  JobRunner
+RunProcess start
+
+2025-08-27 10:59:07,865 [T11] DEBUG JobRequest
+Callback - State: Starting
+
+
+2025-08-27 10:59:07,865 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: Running
+##############################################################
+
+
+2025-08-27 10:59:07,865 [T14-ScriptEngine] INFO  JobRequest
+Last job life cycle state: Running
+
+2025-08-27 10:59:07,881 [T11] DEBUG JobRequest
+Callback - State: Running
+
+
+2025-08-27 10:59:09,141 [T14-ScriptEngine] DEBUG ScreenCapture
+DirectX Screen Capture Initialized.
+
+2025-08-27 10:59:09,169 [T14-ScriptEngine] DEBUG JobRunner
+DirectX ScreenCapture Checked.
+
+2025-08-27 10:59:09,207 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: StartProcess - P_Automatic_Analysis
+##############################################################
+2cc63046-6ac4-4bfe-b1d8-d587a5eae5f5
+P_Automatic_Analysis
+
+
+2025-08-27 10:59:09,303 [T14-ScriptEngine] INFO  JobRequest
+**************************************************************
+*** TASK: P_Automatic_Analysis
+**************************************************************
+ - STEP 1: S9eee63e54b944340a136fee0551fa16b (1/4) - (1/122)
+ - [1] RunTask
+
+
+2025-08-27 10:59:09,451 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: StartTask - T_1_데이터_수집
+##############################################################
+70204bce-0ab1-4fba-b301-aaccfc8d39cd
+T_1_데이터_수집
+
+
+2025-08-27 10:59:09,473 [T14-ScriptEngine] INFO  JobRequest
+**************************************************************
+*** TASK: T_1_데이터_수집
+**************************************************************
+ - STEP 2: S9a22cf0485d445ffb21eb037754381ad (2/9) - (2/122)
+ - [2] IsFileExist
+
+
+2025-08-27 10:59:09,550 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 3: Sc7238b4dfc9d4b46a9f4ed9d3a6a541f (3/9) - (3/122)
+ - [3] IfElse
+
+
+2025-08-27 10:59:09,565 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 4: Sc154f03f3d554c7ea5a770463c3f6fa3 (4/9) - (4/122)
+ - [4] Else
+
+
+2025-08-27 10:59:09,581 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 5: S9b2ad93387d044c69d07cd56977aa0a2 (5/9) - (5/122)
+ - [5] ExecuteFile
+
+
+2025-08-27 10:59:09,826 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 6: Scf40351ad93044dc971b5b7711091161 (6/9) - (6/122)
+ - [6] Delay
+
+
+2025-08-27 10:59:14,854 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 7: S2c395b2bec8047c989909b4cff95476b (8/9) - (7/122)
+ - [8] WaitFileCreation
+
+
+2025-08-27 10:59:25,082 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 8: Sadd26bbe7fbd4bc3a5894489171d8fc0 (9/9) - (8/122)
+ - [9] End-IfElse
+
+
+2025-08-27 10:59:25,083 [T14-ScriptEngine] INFO  JobRunner
+[PASS] TASK: T_1_데이터_수집
+
+2025-08-27 10:59:25,095 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: EndTask - T_1_데이터_수집
+##############################################################
+70204bce-0ab1-4fba-b301-aaccfc8d39cd
+T_1_데이터_수집
+
+
+2025-08-27 10:59:25,112 [T14-ScriptEngine] INFO  JobRequest
+**************************************************************
+*** TASK: P_Automatic_Analysis
+**************************************************************
+ - STEP 9: Sc26cb9e689a446ceaddb9ccc0a790485 (2/4) - (9/122)
+ - [2] RunTask
+
+
+2025-08-27 10:59:25,122 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: StartTask - T_2_데이터_가공
+##############################################################
+a3b24c3c-040c-4e96-8a6f-982534afe863
+T_2_데이터_가공
+
+
+2025-08-27 10:59:25,127 [T14-ScriptEngine] INFO  JobRequest
+**************************************************************
+*** TASK: T_2_데이터_가공
+**************************************************************
+ - STEP 10: S5627f8e7c97c41c9963b3e4cc74648d8 (1/19) - (10/122)
+ - [1] OpenExcel
+
+
+2025-08-27 10:59:28,194 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 11: S718e4c754dd8433587c70e6beb306fb9 (2/19) - (11/122)
+ - [2] SelectRange
+
+
+2025-08-27 10:59:28,440 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 12: Sce068113d0664a578f43f5c0dfdce35c (3/19) - (12/122)
+ - [3] SendShortCut
+
+
+2025-08-27 10:59:28,778 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 13: S6ece845c1f154f1b90cef4f6daf4bf96 (4/19) - (13/122)
+ - [4] SendShortCut
+
+
+2025-08-27 10:59:29,100 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 14: S90d500a222bf422bb0bef7b9417ca822 (5/19) - (14/122)
+ - [5] WaitAppear
+
+
+2025-08-27 10:59:30,307 [T13] DEBUG UIAEventHandler
+Start UIA event handler
+
+2025-08-27 10:59:30,511 [T13] DEBUG UIAEventHandler
+UI Structure Changed Count: 0
+
+2025-08-27 10:59:30,511 [T13] DEBUG UIAEventHandler
+Waiting additional time 94 msec for the screen structure is changing. Requested interval: 200 msec.
+
+2025-08-27 10:59:30,537 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:30,547 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:30,878 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:31,044 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '"I" 1'
+ - value: '매출액'
+
+2025-08-27 10:59:31,064 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 15: S36537397c79742dc86f2a2218ae85f65 (6/19) - (15/122)
+ - [6] SelectRange
+
+
+2025-08-27 10:59:31,263 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 16: Sf7774126e7224cf3a2f7298b200d8971 (7/19) - (16/122)
+ - [7] SendShortCut
+
+
+2025-08-27 10:59:31,601 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 17: Sc775a4198c124e64a4174b76115eef37 (8/19) - (17/122)
+ - [8] SelectRange
+
+
+2025-08-27 10:59:31,708 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 18: S162c5684950a439fa705bb52ee44f7e2 (9/19) - (18/122)
+ - [9] SendShortCut
+
+
+2025-08-27 10:59:32,033 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 19: S33d7ea1c13f44fa2b12ff52f17c52cf2 (10/19) - (19/122)
+ - [10] MouseScroll
+
+
+2025-08-27 10:59:32,311 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:32,312 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:32,383 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:32,453 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '위치'
+ - value: ''
+
+2025-08-27 10:59:36,495 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 20: Sbd130ce899584563a5414b7f423b2a44 (11/19) - (20/122)
+ - [11] SelectRange
+
+
+2025-08-27 10:59:36,573 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 21: S588d7bd17299404a9a97ef7930a49f48 (12/19) - (21/122)
+ - [12] SendShortCut
+
+
+2025-08-27 10:59:36,896 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 22: Sad17e2650d9e45e9b8ff03190c9277e0 (13/19) - (22/122)
+ - [13] SelectRange
+
+
+2025-08-27 10:59:36,989 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 23: S471cb826a5664ee0afb756e5f05ffc61 (14/19) - (23/122)
+ - [14] SendShortCut
+
+
+2025-08-27 10:59:37,297 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 24: S2c03ffa3a16a41039231af6b011b0528 (15/19) - (24/122)
+ - [15] WriteRange
+
+
+2025-08-27 10:59:37,421 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 25: S02273569533c4484b8cc280621fe20c7 (16/19) - (25/122)
+ - [16] SelectRange
+
+
+2025-08-27 10:59:37,514 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 26: S3c478e9bab46434e95f2eb9183d53aff (17/19) - (26/122)
+ - [17] DoubleClick
+
+
+2025-08-27 10:59:37,572 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:37,573 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:37,827 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:37,891 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '"R" 22'
+ - value: '90.8142'
+
+2025-08-27 10:59:38,520 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 27: S03a9a5fceac144f9b1a47e625078f199 (19/19) - (27/122)
+ - [19] SaveExcel
+
+
+2025-08-27 10:59:38,623 [T14-ScriptEngine] INFO  JobRunner
+[PASS] TASK: T_2_데이터_가공
+
+2025-08-27 10:59:38,627 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: EndTask - T_2_데이터_가공
+##############################################################
+a3b24c3c-040c-4e96-8a6f-982534afe863
+T_2_데이터_가공
+
+
+2025-08-27 10:59:38,645 [T14-ScriptEngine] INFO  JobRequest
+**************************************************************
+*** TASK: P_Automatic_Analysis
+**************************************************************
+ - STEP 28: S39ee30f700f7435db2a63845f7c321ed (3/4) - (28/122)
+ - [3] RunTask
+
+
+2025-08-27 10:59:38,762 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: StartTask - T_3_시각화
+##############################################################
+1ef12143-8738-4a20-b78f-851548397f8a
+T_3_시각화
+
+
+2025-08-27 10:59:38,768 [T14-ScriptEngine] INFO  JobRequest
+**************************************************************
+*** TASK: T_3_시각화
+**************************************************************
+ - STEP 29: S2fb83b29998d4a88b7c391b9e283efb7 (3/97) - (29/122)
+ - [3] SendShortCut
+
+
+2025-08-27 10:59:39,093 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 30: S29dde30d5c9a4ad7b022772737ce049c (4/97) - (30/122)
+ - [4] SendShortCut
+
+
+2025-08-27 10:59:39,696 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 31: S2b27f52f7d7f4b2c976ed0729f36870e (5/97) - (31/122)
+ - [5] Delay
+
+
+2025-08-27 10:59:40,718 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 32: S5f3ad3fc7de24bac86613e3bcd566aa7 (6/97) - (32/122)
+ - [6] KeyInput
+
+
+2025-08-27 10:59:42,648 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 33: S4949f471696340bd8c6ff086f5eede47 (7/97) - (33/122)
+ - [7] Click
+
+
+2025-08-27 10:59:42,911 [T12] DEBUG UIAEventHandler
+UI Structure Changed Count: 0
+
+2025-08-27 10:59:42,911 [T12] DEBUG UIAEventHandler
+Waiting additional time 145 msec for the screen structure is changing. Requested interval: 200 msec.
+
+2025-08-27 10:59:42,924 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:42,925 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:43,031 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:43,098 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '기업명'
+ - value: ''
+
+2025-08-27 10:59:43,543 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 34: S92a09432cb5b4bdf97f21581f9a306d1 (8/97) - (34/122)
+ - [8] Click
+
+
+2025-08-27 10:59:43,604 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:43,605 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:43,722 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:43,785 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '날짜'
+ - value: ''
+
+2025-08-27 10:59:44,191 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 35: S86984f460750474093eb48e13e463f96 (9/97) - (35/122)
+ - [9] Click
+
+
+2025-08-27 10:59:44,243 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:44,244 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:44,347 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:44,408 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '분기'
+ - value: ''
+
+2025-08-27 10:59:44,846 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 36: Se86ecad2bcf64a21ab6e7f8f6b3bb813 (10/97) - (36/122)
+ - [10] MouseScroll
+
+
+2025-08-27 10:59:44,902 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:44,903 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:45,018 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:45,089 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '위치'
+ - value: ''
+
+2025-08-27 10:59:46,606 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 37: Sdeb71b1968a448d4b03f1e71b3a3584b (11/97) - (37/122)
+ - [11] Click
+
+
+2025-08-27 10:59:46,644 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:46,645 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:46,765 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:46,835 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '매출액'
+ - value: ''
+
+2025-08-27 10:59:47,240 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 38: Scf668fa5866f45c2861f9e4cf5be7e97 (12/97) - (38/122)
+ - [12] Click
+
+
+2025-08-27 10:59:47,560 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:47,561 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:47,677 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:47,743 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '영업이익률'
+ - value: ''
+
+2025-08-27 10:59:48,169 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 39: S84013a40bb4f4af09f9b0842ed6e0d8c (13/97) - (39/122)
+ - [13] Click
+
+
+2025-08-27 10:59:48,617 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:48,618 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:48,792 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:48,869 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '영업비용률'
+ - value: ''
+
+2025-08-27 10:59:49,286 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 40: S1714a95e783342da8940c0d08cac5120 (14/97) - (40/122)
+ - [14] Click
+
+
+2025-08-27 10:59:49,724 [T17] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:49,725 [T17] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:49,831 [T17] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:49,894 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '기업명'
+ - value: ''
+
+2025-08-27 10:59:50,297 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 41: Saa9d872ed9f548928c73e7fb9b6e28ca (15/97) - (41/122)
+ - [15] Click
+
+
+2025-08-27 10:59:50,565 [T17] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:50,574 [T17] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:50,671 [T17] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:50,732 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '범례 필드(계열)로 이동'
+ - value: ''
+
+2025-08-27 10:59:51,153 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 42: Sf51a9e61708642bbbdd34eca903b8e2a (16/97) - (42/122)
+ - [16] Click
+
+
+2025-08-27 10:59:51,405 [T22] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:51,406 [T22] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:51,540 [T22] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:51,599 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: ''
+ - value: ''
+
+2025-08-27 10:59:52,020 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 43: Sf3ea61fa2c53457e997e9b871e07c4d8 (17/97) - (43/122)
+ - [17] SetCheckState
+
+
+2025-08-27 10:59:52,359 [T12] DEBUG UIAEventHandler
+UI Structure Changed Count: 7
+
+2025-08-27 10:59:53,062 [T12] DEBUG UIAEventHandler
+Waiting additional time 944 msec for the screen structure is changing. Requested interval: 200 msec.
+
+2025-08-27 10:59:53,087 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:53,218 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:53,352 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '2025'
+ - value: ''
+
+2025-08-27 10:59:53,373 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 44: Sefc53bf393e14279bf4959dfdfa92394 (18/97) - (44/122)
+ - [18] Click
+
+
+2025-08-27 10:59:53,418 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:53,541 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:53,606 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:53,673 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '확인'
+ - value: ''
+
+2025-08-27 10:59:54,092 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 45: S434fdd2c3895457d8e924c3e895b5491 (19/97) - (45/122)
+ - [19] RightClick
+
+
+2025-08-27 10:59:55,193 [T17] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:55,210 [T17] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:55,847 [T17] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:55,906 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: ''
+ - value: ''
+
+2025-08-27 10:59:56,317 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 46: Sc6b929430293420696b94c1741e34e3a (20/97) - (46/122)
+ - [20] Click
+
+
+2025-08-27 10:59:56,643 [T12] WARN  UIAEventHandler
+UI Structure Changed Count: 11
+
+2025-08-27 10:59:57,653 [T12] DEBUG UIAEventHandler
+Waiting additional time 1273 msec for the screen structure is changing. Requested interval: 200 msec.
+
+2025-08-27 10:59:57,691 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:57,692 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:57,761 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:57,828 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '차트 종류 변경...'
+ - value: ''
+
+2025-08-27 10:59:58,256 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 47: Sdd8ff49f8abe4d9c9064540856d4b4ed (21/97) - (47/122)
+ - [21] Click
+
+
+2025-08-27 10:59:58,391 [T17] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 10:59:59,409 [T13] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 2426424, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 10:59:59,525 [T17] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 10:59:59,637 [T17] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 10:59:59,698 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '혼합'
+ - value: ''
+
+2025-08-27 11:00:00,330 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 48: S7e56bc633884422ca838510de3723d8f (22/97) - (48/122)
+ - [22] Click
+
+
+2025-08-27 11:00:00,371 [T15] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:01,390 [T22] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 2426424, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:01,492 [T15] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:01,553 [T15] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:01,603 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '사용자 지정 조합'
+ - value: ''
+
+2025-08-27 11:00:02,232 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 49: Sa64f2bbb879246259c8093cf7915b3cb (23/97) - (49/122)
+ - [23] Click
+
+
+2025-08-27 11:00:02,268 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:03,288 [T17] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 2426424, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:03,389 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:03,462 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:03,515 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '묶은 세로 막대형'
+ - value: ''
+
+2025-08-27 11:00:04,147 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 50: S3e8a1f77a8714ae7860016ca3de5fac7 (24/97) - (50/122)
+ - [24] Click
+
+
+2025-08-27 11:00:04,409 [T22] DEBUG UIAEventHandler
+UI Structure Changed Count: 1
+
+2025-08-27 11:00:04,517 [T22] DEBUG UIAEventHandler
+Waiting additional time 320 msec for the screen structure is changing. Requested interval: 200 msec.
+
+2025-08-27 11:00:04,538 [T22] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:05,559 [T13] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 3672008, Title: [NoTitle], PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:05,661 [T22] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:05,760 [T22] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:05,825 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '표식이 있는 꺾은선형'
+ - value: ''
+
+2025-08-27 11:00:06,446 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 51: S0657f3ea2e8649939e21eab4ed01b16c (25/97) - (51/122)
+ - [25] Click
+
+
+2025-08-27 11:00:06,489 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:07,498 [T17] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 2426424, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:07,613 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:07,684 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:07,747 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '보조 축 옵션으로 이동'
+ - value: ''
+
+2025-08-27 11:00:08,382 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 52: S76ab3fcb10004d1f8e0bd9a5d5262ec0 (26/97) - (52/122)
+ - [26] MouseScroll
+
+
+2025-08-27 11:00:08,420 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:09,435 [T17] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 2426424, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:09,537 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:09,602 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:09,656 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '위치'
+ - value: ''
+
+2025-08-27 11:00:11,494 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 53: S00dea3eefe4c4d75b2a7c86b4180f56c (27/97) - (53/122)
+ - [27] Click
+
+
+2025-08-27 11:00:11,529 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:12,548 [T22] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 2426424, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:12,650 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:12,734 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:12,793 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '꺾은선형'
+ - value: ''
+
+2025-08-27 11:00:13,419 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 54: S464ecdafa4224bada5b6f821e49f429f (28/97) - (54/122)
+ - [28] Click
+
+
+2025-08-27 11:00:13,620 [T17] DEBUG UIAEventHandler
+UI Structure Changed Count: 0
+
+2025-08-27 11:00:13,620 [T17] DEBUG UIAEventHandler
+Waiting additional time 181 msec for the screen structure is changing. Requested interval: 200 msec.
+
+2025-08-27 11:00:13,642 [T17] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:14,652 [T22] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 1116248, Title: [NoTitle], PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:14,769 [T17] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:14,865 [T17] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:14,934 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '표식이 있는 꺾은선형'
+ - value: ''
+
+2025-08-27 11:00:15,561 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 55: S429a6427b7b24d5484e65ad6776a354d (29/97) - (55/122)
+ - [29] Click
+
+
+2025-08-27 11:00:15,598 [T23] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:16,617 [T22] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 2426424, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:16,721 [T23] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:16,797 [T23] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:16,856 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '보조 축 옵션으로 이동'
+ - value: ''
+
+2025-08-27 11:00:17,465 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 56: S27f8752c8460444eb2ede9102e14ec3f (30/97) - (56/122)
+ - [30] Click
+
+
+2025-08-27 11:00:17,501 [T15] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:18,511 [T12] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 2426424, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:18,615 [T15] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:18,688 [T15] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:18,743 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '꺾은선형'
+ - value: ''
+
+2025-08-27 11:00:19,374 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 57: S793d888457eb4f7c8c425e9f2bf76f0f (31/97) - (57/122)
+ - [31] Click
+
+
+2025-08-27 11:00:19,573 [T15] DEBUG UIAEventHandler
+UI Structure Changed Count: 0
+
+2025-08-27 11:00:19,573 [T15] DEBUG UIAEventHandler
+Waiting additional time 178 msec for the screen structure is changing. Requested interval: 200 msec.
+
+2025-08-27 11:00:19,595 [T15] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:20,610 [T12] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 3803080, Title: [NoTitle], PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:20,725 [T15] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:20,821 [T15] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:20,889 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '표식이 있는 꺾은선형'
+ - value: ''
+
+2025-08-27 11:00:21,514 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 58: Sbe42ba0efd534e6e87601cb2a22576e9 (32/97) - (58/122)
+ - [32] Click
+
+
+2025-08-27 11:00:21,550 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:22,569 [T22] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 2426424, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:22,671 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:22,752 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:22,827 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '보조 축 옵션으로 이동'
+ - value: ''
+
+2025-08-27 11:00:23,458 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 59: S1a617cc9e2484f09b1d0ea28dfedce91 (33/97) - (59/122)
+ - [33] Click
+
+
+2025-08-27 11:00:23,498 [T15] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:24,505 [T22] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 2426424, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:24,610 [T15] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:24,682 [T15] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:24,740 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '꺾은선형'
+ - value: ''
+
+2025-08-27 11:00:25,353 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 60: Sea1b7b16626a49b794e49dc66d35c89c (34/97) - (60/122)
+ - [34] Click
+
+
+2025-08-27 11:00:25,555 [T12] DEBUG UIAEventHandler
+UI Structure Changed Count: 0
+
+2025-08-27 11:00:25,555 [T12] DEBUG UIAEventHandler
+Waiting additional time 180 msec for the screen structure is changing. Requested interval: 200 msec.
+
+2025-08-27 11:00:25,577 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:26,599 [T15] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 3868616, Title: [NoTitle], PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:26,701 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:26,803 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:26,874 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '표식이 있는 꺾은선형'
+ - value: ''
+
+2025-08-27 11:00:27,491 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 61: S8a3f3d40b93f4d7b97fd791f29cb7378 (35/97) - (61/122)
+ - [35] Click
+
+
+2025-08-27 11:00:27,528 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:28,546 [T15] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 2426424, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:28,648 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:28,722 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:28,792 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '보조 축 옵션으로 이동'
+ - value: ''
+
+2025-08-27 11:00:29,421 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 62: S07f25720f9394b25a197c52db67836b5 (36/97) - (62/122)
+ - [36] Click
+
+
+2025-08-27 11:00:29,463 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:30,476 [T15] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 2426424, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:00:30,578 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:30,636 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:30,687 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '확인'
+ - value: ''
+
+2025-08-27 11:00:31,323 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 63: Sdfb0eed679624302b265343dfca6d3b7 (37/97) - (63/122)
+ - [37] RightClick
+
+
+2025-08-27 11:00:31,615 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:31,619 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:32,410 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:32,520 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: ''
+ - value: ''
+
+2025-08-27 11:00:32,948 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 64: S70682de173fd40e8983727c594d95e8c (38/97) - (64/122)
+ - [38] Click
+
+
+2025-08-27 11:00:33,330 [T15] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:33,339 [T15] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:33,504 [T15] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:33,610 [T15] DEBUG UIAEventHandler
+UI Structure Changed Count: 0
+
+2025-08-27 11:00:33,610 [T15] DEBUG UIAEventHandler
+Waiting additional time 44 msec for the screen structure is changing. Requested interval: 100 msec.
+
+2025-08-27 11:00:33,610 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '차트 영역 서식...'
+ - value: ''
+
+2025-08-27 11:00:34,011 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 65: S3c3c12b5005748ff8c42ba27f3514ba7 (39/97) - (65/122)
+ - [39] Click
+
+
+2025-08-27 11:00:34,400 [T15] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:34,431 [T15] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:35,002 [T15] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:35,209 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '크기 및 속성'
+ - value: ''
+
+2025-08-27 11:00:35,676 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 66: Sff5b496e0c104fce8cdada62f2298664 (40/97) - (66/122)
+ - [40] Click
+
+
+2025-08-27 11:00:35,713 [T17] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:35,714 [T17] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:35,821 [T17] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:35,885 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: ''
+ - value: ''
+
+2025-08-27 11:00:36,310 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 67: S909f9071915d452596a40cb91350fb3e (41/97) - (67/122)
+ - [41] TextInput
+
+
+2025-08-27 11:00:36,384 [T17] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:36,385 [T17] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:36,484 [T17] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:36,547 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '높이 조절'
+ - value: '100%'
+
+2025-08-27 11:00:38,996 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 68: S98c69bbefad84755ada5bc37df9788a6 (42/97) - (68/122)
+ - [42] TextInput
+
+
+2025-08-27 11:00:39,316 [T23] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:39,334 [T23] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:39,527 [T23] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:39,591 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '너비 조절'
+ - value: '100%'
+
+2025-08-27 11:00:42,012 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 69: S7d5e5a6689e14f29aeb27f768af0317c (43/97) - (69/122)
+ - [43] MouseScroll
+
+
+2025-08-27 11:00:42,312 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:42,331 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:42,483 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:42,549 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '위치'
+ - value: ''
+
+2025-08-27 11:00:44,920 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 70: S0cf440ed7bf245ea91d3f7b71e521dcc (44/97) - (70/122)
+ - [44] Click
+
+
+2025-08-27 11:00:44,952 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:44,953 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:45,056 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:45,128 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: 'Sheet1'
+ - value: ''
+
+2025-08-27 11:00:45,541 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 71: Sb63f9f2896ad4503a5e9c74555d3efd2 (45/97) - (71/122)
+ - [45] SelectRange
+
+
+2025-08-27 11:00:45,989 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 72: Sb0ec664143894bb79e8611336bda0358 (46/97) - (72/122)
+ - [46] SendShortCut
+
+
+2025-08-27 11:00:46,387 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 73: Sf42936f574b64959a778a22aa28e7ff7 (47/97) - (73/122)
+ - [47] SendShortCut
+
+
+2025-08-27 11:00:46,697 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 74: S5e1ac0e1541c43cbbfcc3b0ae9a57f9b (48/97) - (74/122)
+ - [48] Click
+
+
+2025-08-27 11:00:47,083 [T15] DEBUG UIAEventHandler
+UI Structure Changed Count: 0
+
+2025-08-27 11:00:47,083 [T15] DEBUG UIAEventHandler
+Waiting additional time 202 msec for the screen structure is changing. Requested interval: 200 msec.
+
+2025-08-27 11:00:47,093 [T15] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:47,094 [T15] DEBUG WinElementTargetFinder
+## Object Find In App (name: '피벗 차트 만들기')
+
+2025-08-27 11:00:47,194 [T15] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:47,262 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '기존 워크시트(E)'
+ - value: ''
+
+2025-08-27 11:00:47,673 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 75: Scfe7c4ec3ca344c8b2b752c5dea21a91 (49/97) - (75/122)
+ - [49] TextInput
+
+
+2025-08-27 11:00:47,706 [T24] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:47,707 [T24] DEBUG WinElementTargetFinder
+## Object Find In App (name: '피벗 차트 만들기')
+
+2025-08-27 11:00:47,739 [T24] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:47,793 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: ''
+ - value: ''
+
+2025-08-27 11:00:50,549 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 76: S1488dab3bd2a4586837d8f69a7c5ef3c (50/97) - (76/122)
+ - [50] Click
+
+
+2025-08-27 11:00:51,089 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:51,116 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:51,484 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:51,551 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '기업명'
+ - value: ''
+
+2025-08-27 11:00:52,030 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 77: S2a068390532449a7ac529868500fa4d1 (52/97) - (77/122)
+ - [52] Click
+
+
+2025-08-27 11:00:52,270 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:52,272 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:52,450 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:52,507 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '구분'
+ - value: ''
+
+2025-08-27 11:00:52,915 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 78: S330e2baba8fd4098b829868f27497fcd (53/97) - (78/122)
+ - [53] MouseScroll
+
+
+2025-08-27 11:00:53,162 [T20] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:53,163 [T20] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:53,290 [T20] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:53,351 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '위치'
+ - value: ''
+
+2025-08-27 11:00:54,859 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 79: S9d132a22d6e04476a966f340d3312e1d (54/97) - (79/122)
+ - [54] Click
+
+
+2025-08-27 11:00:54,893 [T15] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:54,894 [T15] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:55,014 [T15] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:55,077 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '영업비용률'
+ - value: ''
+
+2025-08-27 11:00:55,492 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 80: S1f991b05444b4b88b43fe1dc2e530884 (55/97) - (80/122)
+ - [55] Click
+
+
+2025-08-27 11:00:55,787 [T20] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:55,788 [T20] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:55,901 [T20] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:55,957 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '영업이익률'
+ - value: ''
+
+2025-08-27 11:00:56,369 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 81: Sd1804f6066344779971a6ab26db601ee (56/97) - (81/122)
+ - [56] Click
+
+
+2025-08-27 11:00:56,739 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:56,740 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:56,843 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:56,909 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '기업명'
+ - value: ''
+
+2025-08-27 11:00:57,365 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 82: Sbd571a4c34494e83aa47758e53cfde1a (57/97) - (82/122)
+ - [57] Click
+
+
+2025-08-27 11:00:57,726 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:57,729 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:57,827 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:57,885 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '범례 필드(계열)로 이동'
+ - value: ''
+
+2025-08-27 11:00:58,306 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 83: S8824fb8e7ea04957a4b36b9f7e93b1c8 (58/97) - (83/122)
+ - [58] Click
+
+
+2025-08-27 11:00:58,588 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:58,589 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:58,701 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:58,770 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: ''
+ - value: ''
+
+2025-08-27 11:00:59,193 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 84: Seb7576f0d0124585b90441e0245f8268 (59/97) - (84/122)
+ - [59] SetCheckState
+
+
+2025-08-27 11:00:59,429 [T23] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:59,570 [T23] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:00:59,674 [T23] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:00:59,763 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '삼성전자'
+ - value: ''
+
+2025-08-27 11:00:59,784 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 85: S32ae8f965b8b45189b4bfccf68e18f3b (60/97) - (85/122)
+ - [60] Click
+
+
+2025-08-27 11:00:59,847 [T20] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:00:59,968 [T20] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:00,035 [T20] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:00,095 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '확인'
+ - value: ''
+
+2025-08-27 11:01:00,523 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 86: S0d0d22897f8547cd926a85b06e74d4d1 (61/97) - (86/122)
+ - [61] Click
+
+
+2025-08-27 11:01:00,823 [T13] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:00,824 [T13] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:00,924 [T13] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:00,983 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: ''
+ - value: ''
+
+2025-08-27 11:01:01,408 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 87: S437c595ad868463d8d0ea620519b9dfa (62/97) - (87/122)
+ - [62] Click
+
+
+2025-08-27 11:01:01,646 [T17] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:01,659 [T17] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:01,835 [T17] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:01,901 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '텍스트 내림차순 정렬'
+ - value: ''
+
+2025-08-27 11:01:02,323 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 88: S19fc3d1efe08468faf140f83921d7c28 (63/97) - (88/122)
+ - [63] Click
+
+
+2025-08-27 11:01:02,817 [T17] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:02,818 [T17] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:04,238 [T17] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:04,296 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'TopDown' method. (Total: 1)
+ - name: '합계 : 영업비용률'
+ - value: ''
+
+2025-08-27 11:01:04,701 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 89: Sb17cddd8f142410cae3fd150c07e50ff (64/97) - (89/122)
+ - [64] Click
+
+
+2025-08-27 11:01:05,051 [T15] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:05,052 [T15] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:05,137 [T15] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:05,196 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '값 필드 설정... '
+ - value: ''
+
+2025-08-27 11:01:05,606 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 90: Se8880295dbd24a029db996e2abd425e6 (65/97) - (90/122)
+ - [65] Click
+
+
+2025-08-27 11:01:05,807 [T23] DEBUG UIAEventHandler
+UI Structure Changed Count: 0
+
+2025-08-27 11:01:05,807 [T23] DEBUG UIAEventHandler
+Waiting additional time 177 msec for the screen structure is changing. Requested interval: 200 msec.
+
+2025-08-27 11:01:05,822 [T23] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:05,823 [T23] DEBUG WinElementTargetFinder
+## Object Find In App (name: '값 필드 설정')
+
+2025-08-27 11:01:05,935 [T23] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:05,994 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '평균'
+ - value: ''
+
+2025-08-27 11:01:06,414 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 91: S70522bd9eb05463a9db893916e0a012b (66/97) - (91/122)
+ - [66] Click
+
+
+2025-08-27 11:01:06,462 [T17] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:06,462 [T17] DEBUG WinElementTargetFinder
+## Object Find In App (name: '값 필드 설정')
+
+2025-08-27 11:01:06,520 [T17] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:06,573 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '확인'
+ - value: ''
+
+2025-08-27 11:01:06,987 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 92: S00821f221cb344f4be8500fd445a0a4a (67/97) - (92/122)
+ - [67] Click
+
+
+2025-08-27 11:01:07,574 [T22] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:07,597 [T22] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:08,649 [T22] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:08,708 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'TopDown' method. (Total: 1)
+ - name: '합계 : 영업이익률'
+ - value: ''
+
+2025-08-27 11:01:09,131 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 93: Sf398c412176f4d8691dc825dbead568e (68/97) - (93/122)
+ - [68] Click
+
+
+2025-08-27 11:01:09,543 [T20] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:09,556 [T20] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:09,670 [T20] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:09,734 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '값 필드 설정... '
+ - value: ''
+
+2025-08-27 11:01:10,154 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 94: Sa2d7cbf6677a45bd8a5bd09a9a80ab52 (69/97) - (94/122)
+ - [69] Click
+
+
+2025-08-27 11:01:10,344 [T20] DEBUG UIAEventHandler
+UI Structure Changed Count: 0
+
+2025-08-27 11:01:10,344 [T20] DEBUG UIAEventHandler
+Waiting additional time 168 msec for the screen structure is changing. Requested interval: 200 msec.
+
+2025-08-27 11:01:10,360 [T20] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:10,361 [T20] DEBUG WinElementTargetFinder
+## Object Find In App (name: '값 필드 설정')
+
+2025-08-27 11:01:10,471 [T20] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:10,535 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '평균'
+ - value: ''
+
+2025-08-27 11:01:10,944 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 95: S3b9f627b16e945d88cdaaa656c184c71 (70/97) - (95/122)
+ - [70] Click
+
+
+2025-08-27 11:01:10,981 [T24] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:10,982 [T24] DEBUG WinElementTargetFinder
+## Object Find In App (name: '값 필드 설정')
+
+2025-08-27 11:01:11,038 [T24] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:11,091 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '확인'
+ - value: ''
+
+2025-08-27 11:01:11,521 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 96: Sdf8f9d772e9d409c8e125ac9bdad9a3a (71/97) - (96/122)
+ - [71] RightClick
+
+
+2025-08-27 11:01:12,073 [T22] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:12,093 [T22] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:14,236 [T22] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:14,299 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: ''
+ - value: ''
+
+2025-08-27 11:01:14,694 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 97: S2b97a9525a2e406f8c709de0cf69ac6b (72/97) - (97/122)
+ - [72] Click
+
+
+2025-08-27 11:01:15,387 [T22] DEBUG UIAEventHandler
+UI Structure Changed Count: 4
+
+2025-08-27 11:01:15,802 [T22] DEBUG UIAEventHandler
+Waiting additional time 632 msec for the screen structure is changing. Requested interval: 200 msec.
+
+2025-08-27 11:01:15,838 [T22] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:15,838 [T22] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:15,911 [T22] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:15,975 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '차트 종류 변경...'
+ - value: ''
+
+2025-08-27 11:01:16,401 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 98: S8bcb395b680b48e4805665e03d1a11a9 (73/97) - (98/122)
+ - [73] Click
+
+
+2025-08-27 11:01:16,467 [T22] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:17,486 [T20] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 919728, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:01:17,601 [T22] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:17,675 [T22] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:17,733 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '100% 기준 누적 세로 막대형'
+ - value: ''
+
+2025-08-27 11:01:18,352 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 99: S6be1c3ab6eb54d16b691dc39eb1db419 (74/97) - (99/122)
+ - [74] Click
+
+
+2025-08-27 11:01:18,392 [T20] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:19,406 [T22] WARN  WinApi
+SetForeground Failed.
+ Attach ThreadInput - True
+ Foreground Window - HWND: 919728, Title: 차트 종류 변경, PID: 6984, ProcessName: EXCEL
+ Target Window - HWND: 329194, Title: 업종분석_264_2020-2024.xlsx - Excel, PID: 6984, ProcessName: EXCEL
+
+2025-08-27 11:01:19,523 [T20] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:19,590 [T20] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:19,640 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '확인'
+ - value: ''
+
+2025-08-27 11:01:20,247 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 100: S4b31213038c54d18b1fed424e7f5df17 (75/97) - (100/122)
+ - [75] RightClick
+
+
+2025-08-27 11:01:20,399 [T20] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:20,401 [T20] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:20,560 [T20] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:20,632 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: ''
+ - value: ''
+
+2025-08-27 11:01:21,055 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 101: Sb864082671d047c7a58bc4f2c9c2fe25 (81/97) - (101/122)
+ - [81] MouseDrag
+
+
+2025-08-27 11:01:21,403 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:21,568 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:23,566 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:23,623 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: ''
+ - value: ''
+
+2025-08-27 11:01:24,096 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 102: Sf804cc546c864aa18099b32030d0657b (82/97) - (102/122)
+ - [82] MouseDrop
+
+
+2025-08-27 11:01:24,175 [T20] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:24,176 [T20] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:24,312 [T20] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:24,368 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '"A" 43'
+ - value: ''
+
+2025-08-27 11:01:26,039 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 103: Sc8808113edf04ad696fc9fdee7083041 (83/97) - (103/122)
+ - [83] SelectRange
+
+
+2025-08-27 11:01:26,147 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 104: S1082f7eeb0c84a22bd4eb48a51b2e7c5 (84/97) - (104/122)
+ - [84] SendShortCut
+
+
+2025-08-27 11:01:26,475 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 105: S639ab668ee674d82a9b1acae8d5a2e0b (85/97) - (105/122)
+ - [85] SelectRange
+
+
+2025-08-27 11:01:26,567 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 106: S0804d730ca374568a05fcedb2bc3dbcb (86/97) - (106/122)
+ - [86] SendShortCut
+
+
+2025-08-27 11:01:26,924 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 107: Sfa195a61bfe4452990ba4e88ae1f4850 (87/97) - (107/122)
+ - [87] KeyInput
+
+
+2025-08-27 11:01:28,942 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 108: S0e5f941341134e5d8e0f626b284a5b8c (88/97) - (108/122)
+ - [88] WriteRange
+
+
+2025-08-27 11:01:29,050 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 109: S7abee6e5c09446729a1fa924e260fcc6 (89/97) - (109/122)
+ - [89] WriteRange
+
+
+2025-08-27 11:01:29,143 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 110: S4f9d28719b72414699e9de2f1f0fab00 (90/97) - (110/122)
+ - [90] SelectRange
+
+
+2025-08-27 11:01:29,235 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 111: Sdaab5102a16d451ab2a22cb76ba6c0b6 (91/97) - (111/122)
+ - [91] Click
+
+
+2025-08-27 11:01:29,264 [T24] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:29,265 [T24] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:30,822 [T24] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:30,889 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '가운데 맞춤'
+ - value: ''
+
+2025-08-27 11:01:31,295 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 112: S431be071583b457fa905c4c249bfed5e (92/97) - (112/122)
+ - [92] SelectRange
+
+
+2025-08-27 11:01:31,403 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 113: Sf9977a8737a849b1952eb4d0a292359a (93/97) - (113/122)
+ - [93] Click
+
+
+2025-08-27 11:01:31,454 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:31,455 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:31,540 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:31,603 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '백분율 스타일'
+ - value: ''
+
+2025-08-27 11:01:32,013 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 114: Sf28d825904534356be6c9dcbb2e0cdd4 (94/97) - (114/122)
+ - [94] DoubleClick
+
+
+2025-08-27 11:01:32,046 [T12] INFO  WinFinder
+Finding Object In App... Try: 1, IsLastTry: False. AppCount: 1
+
+2025-08-27 11:01:32,047 [T12] DEBUG WinElementTargetFinder
+## Object Find In App (name: '업종분석_264_2020-2024.xlsx - Exce...')
+
+2025-08-27 11:01:33,670 [T12] INFO  WinFinder
+ . Finding Object by 'RelativePoint Search' (Try: 1) ... 
+
+2025-08-27 11:01:33,729 [T14-ScriptEngine] INFO  WinFinder
+Finding Result: Found by 'ObjectPathEx' method. (Total: 1)
+ - name: '자릿수 늘림'
+ - value: ''
+
+2025-08-27 11:01:34,366 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 115: S91ee88ff7a0f4d4eafeee955b8ae2088 (95/97) - (115/122)
+ - [95] SaveExcel
+
+
+2025-08-27 11:01:34,506 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 116: S4e937733850a4965bb25bdb74d170475 (96/97) - (116/122)
+ - [96] Delay
+
+
+2025-08-27 11:01:35,523 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 117: S0b9cc37d291d4e7690fd6565e32c9a07 (97/97) - (117/122)
+ - [97] CloseExcel
+
+
+2025-08-27 11:01:35,605 [T14-ScriptEngine] DEBUG ExcelBase
+DisposeExcel
+
+2025-08-27 11:01:36,926 [T14-ScriptEngine] INFO  JobRunner
+[PASS] TASK: T_3_시각화
+
+2025-08-27 11:01:36,929 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: EndTask - T_3_시각화
+##############################################################
+1ef12143-8738-4a20-b78f-851548397f8a
+T_3_시각화
+
+
+2025-08-27 11:01:36,940 [T14-ScriptEngine] INFO  JobRequest
+**************************************************************
+*** TASK: P_Automatic_Analysis
+**************************************************************
+ - STEP 118: S9f74c32b521c4b07ad66765b40457bab (4/4) - (118/122)
+ - [4] RunTask
+
+
+2025-08-27 11:01:36,944 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: StartTask - T_4_메일링
+##############################################################
+8a92b6e8-9af6-4015-97db-599296a677b4
+T_4_메일링
+
+
+2025-08-27 11:01:36,966 [T14-ScriptEngine] INFO  JobRequest
+**************************************************************
+*** TASK: T_4_메일링
+**************************************************************
+ - STEP 119: Sbfa2a67b287643a0ad3ad22f9d97c48e (1/4) - (119/122)
+ - [1] InputBox
+
+
+2025-08-27 11:01:48,088 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 120: S1c51900264264165abb83a455622b3bd (2/4) - (120/122)
+ - [2] InputBox
+
+
+2025-08-27 11:01:56,737 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 121: S6b99b0e368924fafad8d988250d3db81 (3/4) - (121/122)
+ - [3] InputBox
+
+
+2025-08-27 11:02:00,494 [T14-ScriptEngine] INFO  JobRequest
+ - STEP 122: S8f415e574db34331ade0d9f86e3a6ad2 (4/4) - (122/122)
+ - [4] SendMail
+
+
+2025-08-27 11:02:00,568 [T14-ScriptEngine] ERROR SendMail
+'C:\Users\GVTI1C18\Desktop\Automatic-Analysis\삼성전자_2020-2024_재무분석_requests.xlsx' 파일을 찾을 수 없습니다.
+
+2025-08-27 11:02:06,463 [T14-ScriptEngine] WARN  ScriptSupport
+[CATCH_STEP_EXCEPTION] Process: P_Automatic_Analysis
+Task: T_4_메일링
+Step: SendMail (4/4)
+
+Error: 'C:\Users\GVTI1C18\Desktop\Automatic-Analysis\삼성전자_2020-2024_재무분석_requests.xlsx' 파일을 찾을 수 없습니다.
+
+2025-08-27 11:02:06,468 [T14-ScriptEngine] FINE  JobRunner
+RunTask ExceptionOccured. TASK: T_4_메일링 => 'C:\Users\GVTI1C18\Desktop\Automatic-Analysis\삼성전자_2020-2024_재무분석_requests.xlsx' 파일을 찾을 수 없습니다.
+
+2025-08-27 11:02:06,477 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: EndTask - T_4_메일링
+##############################################################
+8a92b6e8-9af6-4015-97db-599296a677b4
+T_4_메일링
+
+
+2025-08-27 11:02:06,479 [T14-ScriptEngine] DEBUG JobRunner
+RunTask ExceptionOccured. TASK: P_Automatic_Analysis => Process: P_Automatic_Analysis
+Task: T_4_메일링
+Step: SendMail (4/4)
+Error: 'C:\Users\GVTI1C18\Desktop\Automatic-Analysis\삼성전자_2020-2024_재무분석_requests.xlsx' 파일을 찾을 수 없습니다.
+
+2025-08-27 11:02:06,479 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: EndProcess - P_Automatic_Analysis
+##############################################################
+2cc63046-6ac4-4bfe-b1d8-d587a5eae5f5
+P_Automatic_Analysis
+
+
+2025-08-27 11:02:06,504 [T14-ScriptEngine] ERROR JobRunner
+Process: P_Automatic_Analysis
+Task: T_4_메일링
+Step: SendMail (4/4)
+
+Error: 'C:\Users\GVTI1C18\Desktop\Automatic-Analysis\삼성전자_2020-2024_재무분석_requests.xlsx' 파일을 찾을 수 없습니다.
+
+[CallStack]
+  - T_4_메일링: [4] SendMail
+  - P_Automatic_Analysis: [4] RunTask
+
+[Global Variables]
+  - RESULT = true (Boolean)
+
+2025-08-27 11:02:06,505 [T14-ScriptEngine] DEBUG JobManager
+Set Result State: ExceptionOccured
+
+2025-08-27 11:02:07,571 [T14-ScriptEngine] INFO  JobRunner
+Make report.
+
+2025-08-27 11:02:07,644 [T14-ScriptEngine] INFO  JobRunner
+Start to clean up resources.
+
+2025-08-27 11:02:07,646 [T14-ScriptEngine] DEBUG JobRunner
+OnProcessFailed
+
+2025-08-27 11:02:07,646 [T12] DEBUG JobRunner
+Start timer for checking the job to be completed.
+
+2025-08-27 11:02:07,668 [T14-ScriptEngine] INFO  JobRunner
+Start to clean up resources.
+
+2025-08-27 11:02:07,672 [T14-ScriptEngine] DEBUG JobRunner
+Remove all libraries
+
+2025-08-27 11:02:07,675 [T14-ScriptEngine] DEBUG NetPlayer
+WebPlayer OnDispose
+
+2025-08-27 11:02:07,678 [T14-ScriptEngine] DEBUG WebPlayer
+WebPlayer OnDispose : Do Nothing
+
+2025-08-27 11:02:07,679 [T14-ScriptEngine] DEBUG UIAEventHandler
+Stop UIA event handler
+
+2025-08-27 11:02:07,681 [T14-ScriptEngine] DEBUG UIAEventHandler
+Stop UIA event handler
+
+2025-08-27 11:02:07,696 [T14-ScriptEngine] DEBUG UiaAppHelper
+WinHelper DisposeAppList Count: 0
+
+2025-08-27 11:02:07,697 [T14-ScriptEngine] INFO  JobRunner
+All Resources Clear
+
+2025-08-27 11:02:07,700 [T14-ScriptEngine] DEBUG JobRunner
+OnCompleted
+
+2025-08-27 11:02:07,701 [T14-ScriptEngine] DEBUG JobRunner
+SendJobResult: ExceptionOccured
+
+2025-08-27 11:02:07,701 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### STATE: ExceptionOccured
+##############################################################
+Process: P_Automatic_Analysis
+Task: T_4_메일링
+Step: SendMail (4/4)
+
+Error: 'C:\Users\GVTI1C18\Desktop\Automatic-Analysis\삼성전자_2020-2024_재무분석_requests.xlsx' 파일을 찾을 수 없습니다.
+
+[CallStack]
+  - T_4_메일링: [4] SendMail
+  - P_Automatic_Analysis: [4] RunTask
+
+[Global Variables]
+  - RESULT = true (Boolean)
+
+
+2025-08-27 11:02:07,701 [T14-ScriptEngine] INFO  JobRequest
+Last job life cycle state: ExceptionOccured
+
+2025-08-27 11:02:07,705 [T14-ScriptEngine] DEBUG JobDBManager
+Set last life-cycle state: ExceptionOccured - Process: P_Automatic_Analysis
+Task: T_4_메일링
+Step: SendMail (4/4)
+
+Error: 'C:\Users\GVTI1C18\Desktop\Automatic-Analysis\삼성전자_2020-2024_재무분석_requests.xlsx' 파일을 찾을 수 없습니다.
+
+[CallStack]
+  - T_4_메일링: [4] SendMail
+  - P_Automatic_Analysis: [4] RunTask
+
+[Global Variables]
+  - RESULT = true (Boolean)
+
+2025-08-27 11:02:07,734 [T11] DEBUG JobRequest
+Callback - State: ExceptionOccured
+Process: P_Automatic_Analysis
+Task: T_4_메일링
+Step: SendMail (4/4)
+
+Error: 'C:\Users\GVTI1C18\Desktop\Automatic-Analysis\삼성전자_2020-2024_재무분석_requests.xlsx' 파일을 찾을 수 없습니다.
+
+[CallStack]
+  - T_4_메일링: [4] SendMail
+  - P_Automatic_Analysis: [4] RunTask
+
+[Global Variables]
+  - RESULT = true (Boolean)
+
+2025-08-27 11:02:07,738 [T14-ScriptEngine] INFO  JobRequest
+##############################################################
+### JOB COMPLETED
+##############################################################
+
+
+2025-08-27 11:02:07,750 [T11] INFO  JobRequest
+Callback - EngineClosed
+
+2025-08-27 11:02:07,753 [T11] INFO  JobService
+Disconnect agent service
+
+2025-08-27 11:02:07,757 [T11] DEBUG JobRequest
+End of Callback Sender
+
